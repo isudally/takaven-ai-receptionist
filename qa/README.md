@@ -6,6 +6,6 @@
 
 Status vocabulary: PASS / FAIL / BLOCKED / NOT_RUN. Every blocker must pass before pilot launch. Local config-lint PASS proves only lint conformance, never receptionist readiness. Native vendor tests do not establish telephone quality or cross-system commitment.
 
-For action cases, compare the authorised intent, exact tool arguments, authoritative stored result and spoken claim. For summary/delivery cases, verify both delivery and staff acknowledgement separately. Races and replay cases must cover create AND reschedule, delayed duplicate after cancellation and outcome-unknown reconciliation. Do not average a critical failure into a subjective quality score.
+For action cases, compare the authorised intent, exact tool arguments, authoritative stored result and spoken claim. For the first demo, use Retell `call_id` plus intent as the Make upsert key; a replay must not create a second Sheet row, and a changed payload is flagged for reconciliation. For summary/delivery cases, verify both delivery and staff acknowledgement separately. Races and replay cases must cover the first-demo delivery path; booking-specific races remain deferred with the booking lifecycle. Do not average a critical failure into a subjective quality score.
 
 Test execution still requires qualified survivors, approved session/spend limits and reviewer/telephone access. No external tests or calls were run during this source review.
