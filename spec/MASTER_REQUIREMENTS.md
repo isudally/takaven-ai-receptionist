@@ -10,7 +10,7 @@ Required markets: Mauritius EN/FR; UAE EN/AR. Language switching follows caller 
 
 ## Knowledge and business rules
 
-Client-approved services, indicative/fixed prices, currency/tax wording, hours, address, holidays, policies and restricted topics. Specify business timezone, date interpretation, appointment duration, booking horizon, availability authority, cancellation rules and confirmation requirements. Availability must come from the designated system, not the prompt.
+Client-approved services, indicative/fixed prices, currency/tax wording, hours, address, holidays, approved FAQs, policies and restricted topics. Specify business timezone, date interpretation, appointment-request fields and confirmation requirements. A requested date/time window is captured and read back; availability and committed booking are deferred until a designated customer system exists.
 
 The rebuilt pack has separate fictional automotive draft facts for Mauritius and UAE. Prices/hours are illustrative and unapproved. Deterministic action fixtures with explicit ISO dates, slots and customer/booking IDs remain for the later authorised testing phase. Do not mix markets, calendars or currencies. Demo pricing is not market advice.
 
@@ -18,19 +18,17 @@ The rebuilt pack has separate fictional automotive draft facts for Mauritius and
 
 | Action | Required behaviour |
 |---|---|
-| check_availability | Read available slots for explicit service/date/timezone |
-| book_appointment | Validate required details; confirm intent; create once; return booking ID and committed slot |
-| reschedule_appointment | Verify permitted identity and booking; confirm replacement; return committed outcome |
-| cancel_appointment | Verify permitted identity and booking; confirm intent; return cancellation result |
-| lookup_customer | Minimum necessary lookup; no sensitive disclosure from caller ID alone |
+| capture_appointment_request | Capture service, preferred date/time window, caller details and vehicle; read back and return a staff receipt; do not claim a booking |
 | create_lead | Capture agreed details and priority; avoid duplicate creation |
 | escalate_to_human | Record reason/urgency; transfer or notify; truthful fallback if unavailable |
+
+The following contracts are deferred until a customer-owned booking authority is selected and tested: `check_availability`, `book_appointment`, `reschedule_appointment`, `cancel_appointment` and `lookup_customer`.
 
 See [Action contracts v1](ACTION_CONTRACTS.md) for trusted customer binding, operation/payload deduplication, identity, atomic changes, committed receipts and unknown-outcome reconciliation. Benchmark actions later use explicitly isolated mocks. Production uses supported customer-owned calendar/CRM/integration services; simulated success must never enter a production result.
 
 ## Qualification and routing
 
-Capture intent, service, timeframe, urgency and necessary business qualification. Fleet enquiries trigger high-value routing in the demo. Complaint, unknown answer, explicit human request and urgent cases follow client-approved escalation rules. Do not invent a value, promise a callback deadline without authority, or diagnose mechanical safety issues.
+Capture intent, service, timeframe, urgency and necessary business qualification. Fleet and vehicle-sales enquiries trigger high-value routing in the demo. Complaint, unknown answer, explicit human request and urgent cases follow client-approved escalation rules. Do not invent a value, promise a callback deadline without authority, or diagnose mechanical safety issues.
 
 ## Summary contract
 

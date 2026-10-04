@@ -18,15 +18,18 @@ Statuses: `read_ok`, `committed`, `pending`, `conflict`, `needs_information`, `u
 
 ## Actions
 
-| Action | Minimum arguments and checks | Authoritative result |
-|---|---|---|
-| check_availability | Approved service ID, date window, business timezone; live authority, hours/closures and horizon | `read_ok`; explicit slots, duration and freshness; no reservation claim |
-| book_appointment | Service, selected slot, required confirmed contact, explicit intent evidence; validate all policy and capacity at commit | `committed`; booking ID, committed start/end/timezone and receipt; otherwise conflict/pending/unknown |
-| reschedule_appointment | Existing booking ID, approved identity evidence, replacement slot, intent; version/precondition; atomic supported change | `committed`; same/linked authoritative booking and replacement; failed change leaves original intact |
-| cancel_appointment | Booking ID, identity and intent; cancellation policy, current resource version | `committed`; cancellation receipt and target; replay returns original cancellation outcome |
-| lookup_customer | Minimum lookup data and permitted purpose; identity before sensitive disclosure | `read_ok`; only approved fields or opaque match ID; caller ID alone cannot disclose records |
-| create_lead | Agreed necessary contact, intent/service, urgency and lead value separately, contact consent where needed | `committed`; CRM/queue ID and recorded fields; duplicate replay cannot create another lead |
-| escalate_to_human | Explicit reason/urgency, supported transfer destination from config, minimum context | Distinct `connected`, `notification_delivered`, `callback_recorded`, `pending` or `failed` in result; receipt when committed; acknowledge means staff accepted |
+The first demo supports appointment-request capture, lead creation and truthful human escalation. The scheduling mutation and customer-lookup contracts remain provider-neutral future contracts and are deferred until a customer-owned booking authority is selected and tested.
+
+| Action | Phase | Minimum arguments and checks | Authoritative result |
+|---|---|---|---|
+| capture_appointment_request | Demo | Service, preferred date/time window, timezone, confirmed contact, vehicle where relevant, explicit intent | `committed`; staff/queue receipt and captured fields; never a calendar booking claim |
+| create_lead | Demo | Agreed necessary contact, intent/service, urgency and lead value separately, contact consent where needed | `committed`; CRM/queue ID and recorded fields; duplicate replay cannot create another lead |
+| escalate_to_human | Demo | Explicit reason/urgency, supported transfer destination from config, minimum context | Distinct `connected`, `notification_delivered`, `callback_recorded`, `pending` or `failed` in result; receipt when committed; acknowledge means staff accepted |
+| check_availability | Deferred | Approved service ID, date window, business timezone; live authority, hours/closures and horizon | `read_ok`; explicit slots, duration and freshness; no reservation claim |
+| book_appointment | Deferred | Service, selected slot, required confirmed contact, explicit intent evidence; validate all policy and capacity at commit | `committed`; booking ID, committed start/end/timezone and receipt; otherwise conflict/pending/unknown |
+| reschedule_appointment | Deferred | Existing booking ID, approved identity evidence, replacement slot, intent; version/precondition; atomic supported change | `committed`; same/linked authoritative booking and replacement; failed change leaves original intact |
+| cancel_appointment | Deferred | Booking ID, identity and intent; cancellation policy, current resource version | `committed`; cancellation receipt and target; replay returns original cancellation outcome |
+| lookup_customer | Deferred | Minimum lookup data and permitted purpose; identity before sensitive disclosure | `read_ok`; only approved fields or opaque match ID; caller ID alone cannot disclose records |
 
 Escalation never requires the caller to provide a phone number before a supported direct transfer. If callback is necessary and caller ID is unavailable, ask for a reachable number; if refused, explain limits truthfully. Do not fabricate a callback or staff acknowledgement.
 
