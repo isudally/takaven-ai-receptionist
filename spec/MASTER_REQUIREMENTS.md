@@ -1,6 +1,6 @@
 # Provider-neutral master receptionist requirements
 
-**Provider-neutral requirements.** Draft client configuration and offline lint now exist in [config](../config/README.md). No live agent or provider payload exists. The selected provider will express these requirements through a minimal supported mapping.
+**Provider-neutral requirements.** TAKAVEN Receptionist Standard is the vendor-neutral implementation package: conversation behaviour, approved knowledge, qualification rules, action contracts, handoff logic, outcome classification, QA methodology and deployment/handover method. Retell is the provisional engine, not the product. Customer-owned provider accounts, telephone routes, calendar/CRM systems and data are preferred where supported and practical; no zero-lock-in or effortless portability claim is made. Draft client configuration and offline lint exist in [config](../config/README.md). No live agent or provider payload exists.
 
 ## Identity and conversation
 
@@ -19,8 +19,8 @@ The rebuilt pack has separate fictional automotive draft facts for Mauritius and
 | Action | Required behaviour |
 |---|---|
 | capture_appointment_request | Capture service, preferred date/time window, caller details and vehicle; read back and return a staff receipt; do not claim a booking |
-| create_lead | Capture agreed details and priority; avoid duplicate creation |
-| escalate_to_human | Record reason/urgency; transfer or notify; truthful fallback if unavailable |
+| create_lead | Capture caller-confirmed contact, intent, service/vehicle details and budget where relevant, urgency and client-approved opportunity classification; use the proposed shared receipt route only after a named customer-owned lead authority is proven; otherwise fail closed to staff follow-up and avoid any CRM/lead claim or duplicate creation |
+| escalate_to_human | Record reason/urgency and the structured handoff brief; transfer or notify; truthful fallback if unavailable |
 
 The following contracts are deferred until a customer-owned booking authority is selected and tested: `check_availability`, `book_appointment`, `reschedule_appointment`, `cancel_appointment` and `lookup_customer`.
 
@@ -28,13 +28,13 @@ See [Action contracts v1](ACTION_CONTRACTS.md) for trusted customer binding, ope
 
 ## Qualification and routing
 
-Capture intent, service, timeframe, urgency and necessary business qualification. Fleet and vehicle-sales enquiries trigger high-value routing in the demo. Complaint, unknown answer, explicit human request and urgent cases follow client-approved escalation rules. Do not invent a value, promise a callback deadline without authority, or diagnose mechanical safety issues.
+Capture intent, service, timeframe, urgency and necessary business qualification. Use the client-approved operational classification values `QUALIFIED`, `FOLLOW_UP_REQUIRED`, `SERVICE`, `ESCALATED` or `GENERAL`; keep urgency separate from optional commercial value (`high`, `standard`, `unknown`). Never infer commercial value from model intuition. Complaint, unknown answer, explicit human request and urgent cases follow client-approved escalation rules. Do not invent a value, promise a callback deadline without authority, or diagnose mechanical safety issues.
 
 ## Summary contract
 
-Caller name; validated contact details; language; intent; service; urgency; requested/committed appointment; booking/action IDs; outcome; follow-up required; human action; unresolved detail; lead category. Mark unknown fields explicitly rather than guessing.
+Caller name; caller-confirmed contact details; language; intent; service/vehicle; preferred timeframe; urgency; opportunity type; value tier; requested/committed appointment; booking/action IDs; call outcome; follow-up required; human action; unresolved detail; receipt reference; delivery status; staff acknowledgement status. Mark unknown fields explicitly rather than guessing. First-demo outcome labels are appointment request captured, lead captured, follow-up required, escalated, informational enquiry resolved or unresolved; never `BOOKED`.
 
-Historical lead labels: HOT, WARM, SERVICE, LOW PRIORITY, URGENT. Because urgency and lead value are different, record urgency separately and define precedence if one summary label is required. Returning customers can still represent hot opportunities. Client rules must determine classification consistently.
+Legacy labels such as HOT, WARM, LOW PRIORITY and URGENT are deprecated for the first-demo schema because they mix urgency, intent, disposition and commercial value. Client-approved rules determine classification; returning callers do not receive a value label by model intuition.
 
 ## Deployment modes
 
