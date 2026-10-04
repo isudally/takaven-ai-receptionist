@@ -22,6 +22,23 @@
   },
   "facts": {
     "approved": false,
+    "address": "Fictional Auto AE, Dubai, UAE",
+    "faqs": [
+      {
+        "id": "opening_hours",
+        "text": {
+          "en": "We are open Monday to Friday from 9 am to 5 pm.",
+          "ar": "نحن مفتوحون من الاثنين إلى الجمعة من الساعة 9 صباحاً حتى 5 مساءً."
+        }
+      },
+      {
+        "id": "location",
+        "text": {
+          "en": "We are in Dubai, UAE.",
+          "ar": "نحن في دبي، الإمارات العربية المتحدة."
+        }
+      }
+    ],
     "services": [
       {
         "id": "inspection",
@@ -38,6 +55,22 @@
         "price_amount": null,
         "price_basis": "human_quote",
         "tax_wording": "Human quotation required"
+      },
+      {
+        "id": "vehicle_sales_enquiry",
+        "name": "Vehicle sales enquiry",
+        "duration_minutes": 15,
+        "price_amount": null,
+        "price_basis": "human_quote",
+        "tax_wording": "Sales team quotation required"
+      },
+      {
+        "id": "test_drive_request",
+        "name": "Test drive request",
+        "duration_minutes": 30,
+        "price_amount": null,
+        "price_basis": "human_quote",
+        "tax_wording": "Sales team confirmation required"
       }
     ],
     "hours": [
@@ -69,6 +102,17 @@
     ],
     "closures": []
   },
+  "routing": {
+    "intents": [
+      {"id": "service_enquiry", "qualification_fields": ["name", "phone", "vehicle", "service"], "action": "create_lead"},
+      {"id": "vehicle_sales_enquiry", "qualification_fields": ["name", "phone", "vehicle", "budget"], "action": "create_lead"},
+      {"id": "appointment_request", "qualification_fields": ["name", "phone", "vehicle", "service", "preferred_date", "preferred_time_window"], "action": "capture_appointment_request"}
+    ],
+    "escalation": [
+      {"id": "urgent_safety", "trigger": "Possible safety concern or vehicle unsafe to drive", "action": "human"},
+      {"id": "explicit_human", "trigger": "Caller explicitly requests a person", "action": "human"}
+    ]
+  },
   "integration": {
     "provider": null,
     "agent_ref": null,
@@ -86,9 +130,13 @@
     "retries": "bounded_then_manual_review"
   },
   "operations": {
-    "mode": "overflow",
+    "mode": "primary",
     "customer_binding": "trusted_destination_and_agent",
-    "human_fallback_ref": null,
+    "handoff": {
+      "destination_ref": null,
+      "hours": "business",
+      "fallback": "callback_capture"
+    },
     "rollback_ref": null
   },
   "privacy": {
