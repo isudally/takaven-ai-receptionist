@@ -1,6 +1,6 @@
 # Provider-neutral master receptionist requirements
 
-**Requirements only.** No live agent or executable configuration exists. The later master configuration must express these once, then map them minimally to the selected provider.
+**Provider-neutral requirements.** Draft client configuration and offline lint now exist in [config](../config/README.md). No live agent or provider payload exists. The selected provider will express these requirements through a minimal supported mapping.
 
 ## Identity and conversation
 
@@ -12,7 +12,7 @@ Required markets: Mauritius EN/FR; UAE EN/AR. Language switching follows caller 
 
 Client-approved services, indicative/fixed prices, currency/tax wording, hours, address, holidays, policies and restricted topics. Specify business timezone, date interpretation, appointment duration, booking horizon, availability authority, cancellation rules and confirmation requirements. Availability must come from the designated system, not the prompt.
 
-The fictional automotive fixture will define fixed facts, explicit ISO dates/timezones, available slots and customer/booking IDs. Do not mix Mauritian and UAE currencies or calendars in one ambiguous fixture. Pricing represents demo facts, not market advice. Generate the fixture only in the authorised testing phase.
+The rebuilt pack has separate fictional automotive draft facts for Mauritius and UAE. Prices/hours are illustrative and unapproved. Deterministic action fixtures with explicit ISO dates, slots and customer/booking IDs remain for the later authorised testing phase. Do not mix markets, calendars or currencies. Demo pricing is not market advice.
 
 ## Action contracts
 
@@ -26,7 +26,7 @@ The fictional automotive fixture will define fixed facts, explicit ISO dates/tim
 | create_lead | Capture agreed details and priority; avoid duplicate creation |
 | escalate_to_human | Record reason/urgency; transfer or notify; truthful fallback if unavailable |
 
-Benchmark actions later use deterministic mocks. Production actions use supported customer-owned calendar/CRM/integration services.
+See [Action contracts v1](ACTION_CONTRACTS.md) for trusted customer binding, operation/payload deduplication, identity, atomic changes, committed receipts and unknown-outcome reconciliation. Benchmark actions later use explicitly isolated mocks. Production uses supported customer-owned calendar/CRM/integration services; simulated success must never enter a production result.
 
 ## Qualification and routing
 
