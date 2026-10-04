@@ -19,7 +19,7 @@ Read `README.md`, `docs/STATUS.md`, `docs/DECISIONS.md` and `docs/PHASE_0_BRIEF.
 - Do not commit credentials, tokens, call recordings or real personal data. Use environment variables and provider-supported secret storage later.
 - Use official public vendor documentation for qualification. Do not reverse engineer private APIs or automate unsupported configuration interfaces.
 - Do not add providers unless a demonstrated blocking deficiency invalidates the shortlist. Verify exact product identifiers before discussing their capabilities.
-- Do not spawn agents or delegate unless the user explicitly authorises parallel agent work.
+- The user authorised sub-agents, a Drift Guard and a GitHub Reuse Scout on 2026-10-04. The main agent is the orchestrator. Follow docs/EXECUTION_RULES.md: at most two execution agents plus these two read-only specialists, minimal context and separate drafts. Invoke the guard at assignment/merge/phase changes and the scout before proposed custom code or dependency design. Resolve STOP findings before proceeding. Sub-agents must not delegate, expand scope or publish.
 
 ## Evidence and decisions
 

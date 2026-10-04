@@ -2,7 +2,7 @@
 
 Configure existing voice technology into reliable telephone receptionists for SMEs in Mauritius and the UAE. Sell a one-off implementation and handover; customers own accounts and pay their underlying platform/telephone charges.
 
-**Current stage: source review complete; independent configuration pack rebuilt and validated offline.** No provider is selected, no live agent is deployed, and no provider tests, audio generation or paid calls have run.
+**Current stage: configuration foundation rebuilt; bounded provider desk pass complete.** All five full stacks remain unresolved. No provider is selected, no live agent is deployed, and no provider tests, audio generation or paid calls have run.
 
 ## What is implemented
 
@@ -28,7 +28,9 @@ Both example profiles validate as drafts. The self-test rejects 20 unsafe/invali
 
 ## Next gate
 
-Follow [Phase 0 brief](docs/PHASE_0_BRIEF.md) and record official-source evidence in [Provider qualification](docs/PROVIDER_QUALIFICATION.md). Verify the five candidate families, exact products, supported MU/UAE telephone paths and existing booking/CRM integrations. Then map the pack only to survivors and conduct the separately authorised lean benchmark. Do not build five adapters, a voice engine, a booking database or a dashboard.
+Follow [Execution rules](docs/EXECUTION_RULES.md): main Codex orchestrates two bounded executors, a Drift Guard and a GitHub Reuse Scout. Checkpoints prevent scope expansion and duplicated custom work.
+
+The [first desk recommendation](reports/PHASE_0_RECOMMENDATION.md) prioritises resolving Retell's managed route, with ElevenAgents next. [Provider qualification](docs/PROVIDER_QUALIFICATION.md) records verified identities/prices and mandatory unknowns. Resolve those before proposing a separately authorised lean benchmark. Do not build five adapters, a voice engine, a booking database or a dashboard.
 
 ## Documentation
 
@@ -52,4 +54,4 @@ Follow [Phase 0 brief](docs/PHASE_0_BRIEF.md) and record official-source evidenc
 
 Private repository: [isudally/takaven-ai-receptionist](https://github.com/isudally/takaven-ai-receptionist). Use its published history for ongoing work. Earlier delivered bundle/archive represents the original documentation baseline and is superseded by this rebuild; do not force-push it over GitHub.
 
-Latest explicit user instructions and [decision log](docs/DECISIONS.md) govern work. Candidate names, access, prices and performance remain unverified until qualification. A repository demonstration is not provider capability or launch evidence.
+Latest explicit user instructions and [decision log](docs/DECISIONS.md) govern work. Use the qualification register to distinguish verified public facts from unresolved access, integration and performance. A repository demonstration is not launch evidence.

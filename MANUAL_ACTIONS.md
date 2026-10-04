@@ -9,7 +9,9 @@ No credentials are required for public-document Phase 0. Do not request all prov
 | Repository setup | Publish prepared documentation through signed-in browser | Codex | COMPLETE; GitHub has separate publication commits from local bundle |
 | Source review/rebuild | Review six repositories and rebuild an independent offline configuration pack | Codex | COMPLETE; source inventory and validation report recorded |
 | Before connector-based execution | Grant this repository access through existing GitHub app connection only if a later operation requires it | Ismaël, only if required | OPTIONAL DEPENDENCY; authorised browser publication works |
-| Next product gate | Perform public-document Phase 0 desk qualification | Codex | NOT STARTED; no credentials needed |
+| Orchestration | Main agent delegates bounded work; Drift Guard and Reuse Scout check scope/reuse | Codex | ACTIVE; assignment/pre-merge guard checks completed |
+| Product gate | First public-document Phase 0 desk qualification pass | Codex | COMPLETE; all full stacks unresolved; no credentials needed |
+| Next task | Resolve Retell mandatory documentation gaps then one carrier/booking route | Codex; account owner only when necessary | PENDING; no paid testing authorised |
 | After Phase 0 | Resolve carrier/account-specific unknowns for actual MU/UAE phone paths | Ismaël plus relevant account/carrier owner | NOT REQUESTED |
 | Before chargeable testing | Agree exact survivors, session/call cap and spending ceiling | Ismaël | NOT REQUESTED |
 | Before survivor testing | Create/activate only required accounts; complete any vendor/carrier verification | Account owner | NOT REQUESTED |
