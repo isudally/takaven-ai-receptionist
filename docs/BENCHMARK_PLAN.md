@@ -23,6 +23,10 @@ Hesitation and silence; overlapping speech/barge-in; multiple corrections; diffi
 
 For each action, verify that the tool executed, its arguments were correct and the final spoken confirmation matches the committed result. A convincing transcript does not prove a booking happened. Test retries/idempotency and authentication for changes; avoid using recognition alone as identity verification.
 
+## Source-review case catalogue
+
+The original 15-case [QA catalogue](../qa/README.md) turns inspected failure modes into acceptance expectations. Cases Q01–Q10 guide the lean screen; Q04 also gets concurrent reschedule stress. Q11–Q15 add replay, delayed duplicate, unknown outcome, retry termination, authentication/mock isolation and summary/delivery checks for finalists. These are design, not run results; count sessions and language variants explicitly.
+
 ## Minimum implementation after authorisation
 
 Use small scripts, one frozen business fixture, deterministic benchmark-only action mocks, common result JSON and a CSV/Markdown comparison. Prefer supported built-in testing/configuration tools where they satisfy the design. Implement only surviving interfaces; no universal framework or cloud review app. Blind review can use shuffled local recordings and a spreadsheet.

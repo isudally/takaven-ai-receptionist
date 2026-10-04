@@ -16,8 +16,12 @@ Baseline recorded: 2026-10-04. Owner: Ismaël. Executor selected in prior discus
 | D10 | Subjective quality judged by fluent humans over telephone | Do not select a winner from synthetic API tests alone |
 | D11 | Fixed tuning budgets and comparable test conditions | Track configuration versions and avoid unequal tuning |
 | D12 | Record unknowns honestly | No fabricated model names, pricing, support claims or results |
-| D13 | Review existing GitHub work before writing equivalent code | Quick reuse review completed; no code copied; licences and suitability govern later reuse |
+| D13 | Review existing GitHub work before writing equivalent code | Source-level review completed across six repositories; 42 files inventoried; no code copied |
 | D14 | Use browser fallback for GitHub setup when connector lacks creation | User authorised opening GitHub and providing access; continue setup after sign-in |
+| D15 | 2026-10-04: rebuild independently using useful patterns from each reference | Authorised offline client configuration, action contracts, QA design and lint; no live providers or paid tests |
+| D16 | Truthful outcomes require authoritative committed receipts | Reject stub confirmation, fake escalation and unverified success after timeout |
+| D17 | Keep the implementation a customer configuration/integration pack | Native voice runtime and existing booking/CRM authority; no custom platform or booking database |
+| D18 | Preserve operation history; atomically protect both create and reschedule | Safe replay after cancellation, outcome reconciliation and bounded terminal retry states |
 
 ## Superseded material
 

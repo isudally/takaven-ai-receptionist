@@ -1,27 +1,30 @@
 # Project status
 
-Last updated: 2026-10-04.
+Updated 2026-10-04.
 
 ## Completed
 
-- Documentation-first local Git repository prepared on `main`.
-- Current scope, decisions, Phase 0 task, qualification template, later benchmark design, acceptance gates and deployment roadmap recorded.
-- Original attachment retained as historical reference; conflicting instructions identified.
-- Quick public GitHub reuse review documented; no code imported or executed.
-- No benchmark implementation, provider APIs, generated audio, test calls, spend or customer deployment.
+- Created private GitHub repository and initial documentation.
+- Reviewed 42 selected source/config/licence files across six related repositories; pinned source inventory and explicit adopt/skip decisions.
+- Rebuilt the independent implementation foundation: architecture, action contracts, conversation policy, two fictional draft automotive profiles, offline lint and 15-case acceptance catalogue.
+- Local lint validated both profiles; 20 negative configuration cases rejected; deterministic hashes verified.
+- Updated deployment/acceptance instructions to address committed outcomes, retries, concurrent changes, authentication, customer binding and truthful staff handover.
+- No third-party code copied or executed. No provider API activity, generated audio, live test calls, spend or deployment.
 
 ## Current state
 
-Phase 0: NOT STARTED. Provider claims/product names: UNVERIFIED. Winner: NONE. Launch readiness: NOT ASSESSED. Accounts/credentials/carrier path: NOT CHECKED.
+Provider qualification: NOT_STARTED. Product claims/shortlist labels: UNVERIFIED. Winner: NONE. Live agent: NONE. Production integrations: NONE. Acceptance cases: all NOT_RUN. Launch readiness: NOT_ASSESSED.
 
-Remote GitHub repository: CREATED and PRIVATE at https://github.com/isudally/takaven-ai-receptionist. Documentation published through the authorised signed-in browser. The connected GitHub API returned 404 for this new private repository, so connector access is unresolved; this did not block browser publication. The original local baseline history is supplied through a bundle in the earlier delivery package; browser publication has separate commits.
+Configuration pack: VALID_DRAFT only. Provider/agent IDs, voice references, booking authority, identity policy, approved facts, retention, fallback and rollback remain unresolved. Local validation does not approve deployment.
 
-## Next actions
+Repository: PRIVATE at https://github.com/isudally/takaven-ai-receptionist. Browser publication is the authorised fallback because the current connector could not access the new private repository. This does not block documentation/config publication. Original local bundle and browser history differ; preserve the remote history.
 
-1. Instruct Codex: “Run Phase 0 only using docs/PHASE_0_BRIEF.md. No build, provider API calls, audio generation or test calls.”
-2. If later repository execution requires connector access, authorise this specific repository in the existing GitHub app connection; do not make it public as a workaround.
-3. Review desk survivors, access requirements and proposed spend before authorising the later benchmark.
+## Next action
 
-## Handover record for subsequent work
+Execute the public-document qualification brief, using the new architecture's safety requirements when judging supported integrations. No credentials needed for desk research. After qualification, propose only surviving mappings and a capped testing plan; do not start calls or provision chargeable resources.
 
-Record: date; phase; user instruction; changed files; sources checked; actions actually run; actions not run; blockers; estimated/actual cost; decisions; exact next task. Never copy pending tasks into the completed section without evidence.
+## Evidence and handover
+
+[Source inventory](SOURCE_INVENTORY.json), [source review](GITHUB_REUSE_REVIEW.md), [offline validation](../reports/OFFLINE_VALIDATION.md), [QA design](../qa/README.md).
+
+User authorised deep source analysis and rebuilding from the good patterns. Work stayed within offline configuration/integration design. Record each later phase's instruction, configuration version, executed checks, actual costs, unresolved issues and exact next task. Never turn a specification or NOT_RUN case into an achieved result.

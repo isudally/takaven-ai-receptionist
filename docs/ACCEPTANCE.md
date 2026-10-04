@@ -20,6 +20,12 @@ Any unresolved wrong appointment/date/time, fabricated price/policy, restricted 
 | Data handling | Client-approved access, disclosure/recording approach, retention and handover controls |
 | Operations | Mode/routing/after-hours, rollback and human backup demonstrated |
 
+## Source-review regression requirements
+
+Use the 15 cases in [qa/acceptance-cases.csv](../qa/acceptance-cases.csv) as the finalist catalogue. Critical checks include create/reschedule capacity races, delayed create replay after cancellation, changed-payload operation conflicts, timeout reconciliation, terminal retry exclusion, authenticated customer binding, no production stub success, truthful transfer status and summary delivery versus staff acknowledgement.
+
+Each mandatory language needs its own appropriate coverage; a single case label spanning languages is not three executed tests. All cases are NOT_RUN. Local config lint is separate evidence.
+
 ## Evidence record
 
 Every acceptance case records ID, fixture/config version, expected outcome, actual tool result, spoken result, language, session/call reference, reviewer where applicable, verdict and unresolved issue. Use PASS/FAIL/BLOCKED/NOT RUN. Fictional demos and real-client acceptance have separate fixtures.

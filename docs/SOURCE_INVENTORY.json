@@ -1,0 +1,342 @@
+{
+  "review_date": "2026-10-04",
+  "scope": "Static source inspection only. No external repository code or tests executed. No third-party code imported into TAKAVEN.",
+  "sources": [
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "config/client.example.yaml",
+      "blob_sha": "46756ad052ac9275ba4b464019a7124676d92b68",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/config/client.example.yaml",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/46756ad052ac9275ba4b464019a7124676d92b68"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "src/dma_deploy_kit/config/models.py",
+      "blob_sha": "7dac42943bf15c999b5ac5ad998371078e562d21",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/src/dma_deploy_kit/config/models.py",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/7dac42943bf15c999b5ac5ad998371078e562d21"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "src/dma_deploy_kit/agent/deploy.py",
+      "blob_sha": "bd0fb48c0f7fe1eaa51834ddba3e0fe69361c952",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/src/dma_deploy_kit/agent/deploy.py",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/bd0fb48c0f7fe1eaa51834ddba3e0fe69361c952"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "src/dma_deploy_kit/postcall/signature.py",
+      "blob_sha": "d7aba257abc6e793397ddc76d52d2a8b83919597",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/src/dma_deploy_kit/postcall/signature.py",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/d7aba257abc6e793397ddc76d52d2a8b83919597"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "src/dma_deploy_kit/postcall/sms.py",
+      "blob_sha": "2b4e2ac45df653756ddabfaefab777957034a1e4",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/src/dma_deploy_kit/postcall/sms.py",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/2b4e2ac45df653756ddabfaefab777957034a1e4"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "pyproject.toml",
+      "blob_sha": "9d80e96a9370d3afe3688a3ae192ab499f063a26",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/pyproject.toml",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/9d80e96a9370d3afe3688a3ae192ab499f063a26"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "LICENSE",
+      "blob_sha": "7ddefdb4d4a392b8771a02680d35fa414dc5fc6a",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/LICENSE",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/7ddefdb4d4a392b8771a02680d35fa414dc5fc6a"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "evals/latency_checks.py",
+      "blob_sha": "fb4271c75dfae29144a96ff25376b229c4cff2da",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/evals/latency_checks.py",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/fb4271c75dfae29144a96ff25376b229c4cff2da"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "evals/transcript_checks.py",
+      "blob_sha": "e0355914eb856cfd00d34cba33248dc551548e55",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/evals/transcript_checks.py",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/e0355914eb856cfd00d34cba33248dc551548e55"
+    },
+    {
+      "repository": "danielfmonzon/dma-deploy-kit",
+      "path": "evals/runlog.py",
+      "blob_sha": "04fb2083cd351c858c5634cedd045e37fa4fcbf2",
+      "commit": "8d2942a185dc7d54fa99211b86a1b9352fa230bb",
+      "url": "https://github.com/danielfmonzon/dma-deploy-kit/blob/8d2942a185dc7d54fa99211b86a1b9352fa230bb/evals/runlog.py",
+      "blob_url": "https://api.github.com/repos/danielfmonzon/dma-deploy-kit/git/blobs/04fb2083cd351c858c5634cedd045e37fa4fcbf2"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "README.md",
+      "blob_sha": "5193c76571854011a3b76250c5b2769c4d476403",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/README.md",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/5193c76571854011a3b76250c5b2769c4d476403"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/bookings.ts",
+      "blob_sha": "b4e03cec30d49f698f64e1bbd2010b9cf13856cd",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/bookings.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/b4e03cec30d49f698f64e1bbd2010b9cf13856cd"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/http-guard.ts",
+      "blob_sha": "7f778805b6779b9d0a9f5591829f20fac3a8e4bd",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/http-guard.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/7f778805b6779b9d0a9f5591829f20fac3a8e4bd"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/voice-handlers.ts",
+      "blob_sha": "f3606d6fdeea7180bd1cdf2dd1c0c813ebfdefce",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/voice-handlers.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/f3606d6fdeea7180bd1cdf2dd1c0c813ebfdefce"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/restaurant-routing.ts",
+      "blob_sha": "7cd17ba86eeab7cf8904b52f35ff7dae8db87beb",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/restaurant-routing.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/7cd17ba86eeab7cf8904b52f35ff7dae8db87beb"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/agent-functions.ts",
+      "blob_sha": "c43bc343cce06c4dc42b26599682faedc0a482b7",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/agent-functions.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/c43bc343cce06c4dc42b26599682faedc0a482b7"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "supabase/migrations/0006_caps_advisory_lock.sql",
+      "blob_sha": "3a8ed890c6e62cf1bd22c9c32556dcee19e07838",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/supabase/migrations/0006_caps_advisory_lock.sql",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/3a8ed890c6e62cf1bd22c9c32556dcee19e07838"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "supabase/migrations/0002_booking_no_overlap.sql",
+      "blob_sha": "789f20605177d597e0b81fa9a2b65152e22db293",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/supabase/migrations/0002_booking_no_overlap.sql",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/789f20605177d597e0b81fa9a2b65152e22db293"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/rate-limit.ts",
+      "blob_sha": "59da7632effb9ab9e1af4d5ae36c7a43d2dc7c90",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/rate-limit.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/59da7632effb9ab9e1af4d5ae36c7a43d2dc7c90"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/reconciliation.ts",
+      "blob_sha": "d4c8fde11fcc9eb83de306956671fca086d66b63",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/reconciliation.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/d4c8fde11fcc9eb83de306956671fca086d66b63"
+    },
+    {
+      "repository": "PilouZer/resto-voice-demo",
+      "path": "lib/timeout.ts",
+      "blob_sha": "48d76b8790f49e38d7fb262a1d766145d2f4f5eb",
+      "commit": "b102f420133b5ce7b2a0b1c3d5096e482719dc8a",
+      "url": "https://github.com/PilouZer/resto-voice-demo/blob/b102f420133b5ce7b2a0b1c3d5096e482719dc8a/lib/timeout.ts",
+      "blob_url": "https://api.github.com/repos/PilouZer/resto-voice-demo/git/blobs/48d76b8790f49e38d7fb262a1d766145d2f4f5eb"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "README.md",
+      "blob_sha": "ef13f62b19880255036c0460eb919050e5ad6256",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/README.md",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/ef13f62b19880255036c0460eb919050e5ad6256"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "docs/limitations-and-roadmap.md",
+      "blob_sha": "c0bceeed6e7ac155e99227b47bed542f109b372a",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/docs/limitations-and-roadmap.md",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/c0bceeed6e7ac155e99227b47bed542f109b372a"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "n8n/workflows/ai-voice-receptionist-router.json",
+      "blob_sha": "79265db164753b097a3082273805af22a69fe0d0",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/n8n/workflows/ai-voice-receptionist-router.json",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/79265db164753b097a3082273805af22a69fe0d0"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "n8n/workflows/retry-error-events.json",
+      "blob_sha": "060c1a84f353a7411d3e12cc3e83b8afc7e779f2",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/n8n/workflows/retry-error-events.json",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/060c1a84f353a7411d3e12cc3e83b8afc7e779f2"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "supabase/migrations/20260519130000_phase1_services_idempotency_safety.sql",
+      "blob_sha": "16b4cf02f665922c0a510b324e271038c2a56eb6",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/supabase/migrations/20260519130000_phase1_services_idempotency_safety.sql",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/16b4cf02f665922c0a510b324e271038c2a56eb6"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "supabase/migrations/20260520120000_phase2_full_idempotency_indexes.sql",
+      "blob_sha": "b675605d063b74f8ae6254050d73056e1afbf84c",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/supabase/migrations/20260520120000_phase2_full_idempotency_indexes.sql",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/b675605d063b74f8ae6254050d73056e1afbf84c"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "retell/tools.json",
+      "blob_sha": "f528049bfc7262aa61b0baa8f96f0af9241c2356",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/retell/tools.json",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/f528049bfc7262aa61b0baa8f96f0af9241c2356"
+    },
+    {
+      "repository": "kaa911-syp/ai-voice-receptionist",
+      "path": "docs/n8n-workflows.md",
+      "blob_sha": "29b593e0491d6b436ff73b5d9854b0f3f4a6377e",
+      "commit": "6593babc9c23ad8ff2106268d6455b02a44edbf6",
+      "url": "https://github.com/kaa911-syp/ai-voice-receptionist/blob/6593babc9c23ad8ff2106268d6455b02a44edbf6/docs/n8n-workflows.md",
+      "blob_url": "https://api.github.com/repos/kaa911-syp/ai-voice-receptionist/git/blobs/29b593e0491d6b436ff73b5d9854b0f3f4a6377e"
+    },
+    {
+      "repository": "elevenlabs/cli",
+      "path": "LICENSE",
+      "blob_sha": "9c29930256f807229644714103e13d8c6d493714",
+      "commit": "0f483a7c1250f8bc00b7d7286d1352d1f5b4321c",
+      "url": "https://github.com/elevenlabs/cli/blob/0f483a7c1250f8bc00b7d7286d1352d1f5b4321c/LICENSE",
+      "blob_url": "https://api.github.com/repos/elevenlabs/cli/git/blobs/9c29930256f807229644714103e13d8c6d493714"
+    },
+    {
+      "repository": "elevenlabs/cli",
+      "path": "cli/elevenlabs/workflow/agents.rs",
+      "blob_sha": "87f8cdff811ca21f2dda56ad5c3ec9ccb76ea674",
+      "commit": "0f483a7c1250f8bc00b7d7286d1352d1f5b4321c",
+      "url": "https://github.com/elevenlabs/cli/blob/0f483a7c1250f8bc00b7d7286d1352d1f5b4321c/cli/elevenlabs/workflow/agents.rs",
+      "blob_url": "https://api.github.com/repos/elevenlabs/cli/git/blobs/87f8cdff811ca21f2dda56ad5c3ec9ccb76ea674"
+    },
+    {
+      "repository": "elevenlabs/cli",
+      "path": "cli/elevenlabs/workflow/tools.rs",
+      "blob_sha": "58d1ff6a64008fb4a27071a6dec40493386fabe5",
+      "commit": "0f483a7c1250f8bc00b7d7286d1352d1f5b4321c",
+      "url": "https://github.com/elevenlabs/cli/blob/0f483a7c1250f8bc00b7d7286d1352d1f5b4321c/cli/elevenlabs/workflow/tools.rs",
+      "blob_url": "https://api.github.com/repos/elevenlabs/cli/git/blobs/58d1ff6a64008fb4a27071a6dec40493386fabe5"
+    },
+    {
+      "repository": "elevenlabs/cli",
+      "path": "cli/elevenlabs/workflow/tests.rs",
+      "blob_sha": "c4d9a7c3c90e737704559abc3222c420f03db6b6",
+      "commit": "0f483a7c1250f8bc00b7d7286d1352d1f5b4321c",
+      "url": "https://github.com/elevenlabs/cli/blob/0f483a7c1250f8bc00b7d7286d1352d1f5b4321c/cli/elevenlabs/workflow/tests.rs",
+      "blob_url": "https://api.github.com/repos/elevenlabs/cli/git/blobs/c4d9a7c3c90e737704559abc3222c420f03db6b6"
+    },
+    {
+      "repository": "elevenlabs/cli",
+      "path": "cli/elevenlabs/workflow/project.rs",
+      "blob_sha": "f8536f368bd45bd89f2f91bd02e34fc676428d7c",
+      "commit": "0f483a7c1250f8bc00b7d7286d1352d1f5b4321c",
+      "url": "https://github.com/elevenlabs/cli/blob/0f483a7c1250f8bc00b7d7286d1352d1f5b4321c/cli/elevenlabs/workflow/project.rs",
+      "blob_url": "https://api.github.com/repos/elevenlabs/cli/git/blobs/f8536f368bd45bd89f2f91bd02e34fc676428d7c"
+    },
+    {
+      "repository": "elevenlabs/cli",
+      "path": "cli/elevenlabs/workflow/verify.rs",
+      "blob_sha": "d2ec6541a4d565ba0683d164fc8bbc7e1fbd5852",
+      "commit": "0f483a7c1250f8bc00b7d7286d1352d1f5b4321c",
+      "url": "https://github.com/elevenlabs/cli/blob/0f483a7c1250f8bc00b7d7286d1352d1f5b4321c/cli/elevenlabs/workflow/verify.rs",
+      "blob_url": "https://api.github.com/repos/elevenlabs/cli/git/blobs/d2ec6541a4d565ba0683d164fc8bbc7e1fbd5852"
+    },
+    {
+      "repository": "elevenlabs/examples",
+      "path": "LICENSE",
+      "blob_sha": "61c1c47ce5964af14a44759b75bd61e5925a898c",
+      "commit": "e3fe466a308fc3015ec6d09fdeabd0f94eb8e773",
+      "url": "https://github.com/elevenlabs/examples/blob/e3fe466a308fc3015ec6d09fdeabd0f94eb8e773/LICENSE",
+      "blob_url": "https://api.github.com/repos/elevenlabs/examples/git/blobs/61c1c47ce5964af14a44759b75bd61e5925a898c"
+    },
+    {
+      "repository": "elevenlabs/examples",
+      "path": "agents/nextjs/quickstart/example/app/api/agent/route.ts",
+      "blob_sha": "f4bd2fd5c88f71244008edf6bfe97fd1d7a639e2",
+      "commit": "e3fe466a308fc3015ec6d09fdeabd0f94eb8e773",
+      "url": "https://github.com/elevenlabs/examples/blob/e3fe466a308fc3015ec6d09fdeabd0f94eb8e773/agents/nextjs/quickstart/example/app/api/agent/route.ts",
+      "blob_url": "https://api.github.com/repos/elevenlabs/examples/git/blobs/f4bd2fd5c88f71244008edf6bfe97fd1d7a639e2"
+    },
+    {
+      "repository": "elevenlabs/examples",
+      "path": "agents/nextjs/quickstart/example/app/api/conversation-token/route.ts",
+      "blob_sha": "30960cb76d762ca3bef33025e4bdb52dcd77e7ce",
+      "commit": "e3fe466a308fc3015ec6d09fdeabd0f94eb8e773",
+      "url": "https://github.com/elevenlabs/examples/blob/e3fe466a308fc3015ec6d09fdeabd0f94eb8e773/agents/nextjs/quickstart/example/app/api/conversation-token/route.ts",
+      "blob_url": "https://api.github.com/repos/elevenlabs/examples/git/blobs/30960cb76d762ca3bef33025e4bdb52dcd77e7ce"
+    },
+    {
+      "repository": "elevenlabs/examples",
+      "path": "agents/nextjs/guardrails/example/app/api/agent/route.ts",
+      "blob_sha": "649eff8164377b49a6358cdb79a2dc9378acf0c6",
+      "commit": "e3fe466a308fc3015ec6d09fdeabd0f94eb8e773",
+      "url": "https://github.com/elevenlabs/examples/blob/e3fe466a308fc3015ec6d09fdeabd0f94eb8e773/agents/nextjs/guardrails/example/app/api/agent/route.ts",
+      "blob_url": "https://api.github.com/repos/elevenlabs/examples/git/blobs/649eff8164377b49a6358cdb79a2dc9378acf0c6"
+    },
+    {
+      "repository": "twilio-samples/speech-assistant-openai-realtime-api-node",
+      "path": "LICENSE",
+      "blob_sha": "fb0840076a8015d55fe88bf4c2f061a84d016a34",
+      "commit": "e0b6f632ec1e61dfbe15d2acbffdeb574d3b527f",
+      "url": "https://github.com/twilio-samples/speech-assistant-openai-realtime-api-node/blob/e0b6f632ec1e61dfbe15d2acbffdeb574d3b527f/LICENSE",
+      "blob_url": "https://api.github.com/repos/twilio-samples/speech-assistant-openai-realtime-api-node/git/blobs/fb0840076a8015d55fe88bf4c2f061a84d016a34"
+    },
+    {
+      "repository": "twilio-samples/speech-assistant-openai-realtime-api-node",
+      "path": "index.js",
+      "blob_sha": "2c5c8bb81771154292725ad25fd2bfa392279646",
+      "commit": "e0b6f632ec1e61dfbe15d2acbffdeb574d3b527f",
+      "url": "https://github.com/twilio-samples/speech-assistant-openai-realtime-api-node/blob/e0b6f632ec1e61dfbe15d2acbffdeb574d3b527f/index.js",
+      "blob_url": "https://api.github.com/repos/twilio-samples/speech-assistant-openai-realtime-api-node/git/blobs/2c5c8bb81771154292725ad25fd2bfa392279646"
+    },
+    {
+      "repository": "twilio-samples/speech-assistant-openai-realtime-api-node",
+      "path": "package.json",
+      "blob_sha": "40799fcf2869c4426fd85f43fde632dc120687d8",
+      "commit": "e0b6f632ec1e61dfbe15d2acbffdeb574d3b527f",
+      "url": "https://github.com/twilio-samples/speech-assistant-openai-realtime-api-node/blob/e0b6f632ec1e61dfbe15d2acbffdeb574d3b527f/package.json",
+      "blob_url": "https://api.github.com/repos/twilio-samples/speech-assistant-openai-realtime-api-node/git/blobs/40799fcf2869c4426fd85f43fde632dc120687d8"
+    }
+  ]
+}
