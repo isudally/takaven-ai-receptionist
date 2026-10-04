@@ -12,7 +12,7 @@ flowchart TD
   T --> V["Selected managed voice agent"]
   V --> K["Approved client configuration"]
   V --> I["Supported integration"]
-  I --> B["Customer booking or CRM authority"]
+  I --> B["Customer staff queue or later booking authority"]
   V --> H["Human transfer or callback"]
   I --> H
 ```
@@ -25,13 +25,13 @@ Each client has a versioned config and an explicit account/agent/destination bin
 
 The [conversation policy](../spec/CONVERSATION_POLICY.md) supplies common semantic rules. Translate them minimally into the selected vendor's native configuration. Do not bind English/French/Arabic to separate agents unless the supported route preserves context and switching tests pass. No Kreol. Prompt injection cannot authorise an action; integration checks apply outside conversation.
 
-## Booking and action outcomes
+## Appointment requests and later booking outcomes
 
-[Action contracts](../spec/ACTION_CONTRACTS.md) separate a request from a committed result. The existing scheduling authority owns capacity and rejects overlapping writes for both creation and rescheduling. An availability read is not a reservation. If supported integrations cannot prove this safety, take a booking request for human confirmation instead of promising a completed appointment.
+[Action contracts](../spec/ACTION_CONTRACTS.md) separate an appointment request from a committed booking. The first demo captures the requested service, date/time window, caller and vehicle details, reads them back and records a staff/queue receipt. It does not claim availability or a booked slot. The existing scheduling authority and its availability/capacity controls are deferred until a customer-owned booking system is selected and tested.
 
 Use a durable operation ID and stored payload digest/outcome. Same operation + same payload returns the original result; same operation + different payload conflicts. Distinct confirmed intentions receive new IDs even within one call. Do not use one call ID for all mutations or erase deduplication history when a booking is cancelled. Retention is client-approved.
 
-After a timeout, classify outcome as unknown until reconciliation with the authority establishes whether the operation committed. Reconcile before retry; preserve the same ID. Never cancel the old appointment before a replacement is committed through an atomic supported change. If that is unavailable, route rescheduling to a human.
+For the first demo, an unknown request-delivery outcome is reconciled against the staff/queue receipt before retry. Later, if a customer booking authority is added, classify a scheduling timeout as unknown until reconciliation establishes whether the operation committed. Never cancel the old appointment before a replacement is committed through an atomic supported change.
 
 ## Authentication and operations
 
@@ -47,4 +47,4 @@ Validate locally; freeze config hash; snapshot the existing native configuration
 
 A local lint pass proves only config conformance. A vendor push proves only that the request was accepted. Neither proves correct booking, natural speech or launch readiness. [QA cases](../qa/README.md) define the separate evidence.
 
-Phase 0 remains the next gate: verify the five candidate families, actual product identifiers, supported MU/UAE telephone paths, EN/FR/AR behavior, existing booking integrations, ownership/export and total operating cost. Repositories do not select the winner.
+Phase 0 follow-up is complete for desk qualification. The next gate is the owner-approved execution plan: offline Retell mapping, route/access decisions and only then an authorised lean telephone test. Repositories do not select the winner.

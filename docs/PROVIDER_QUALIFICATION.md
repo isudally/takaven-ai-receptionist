@@ -26,6 +26,15 @@ Checked 2026-10-04. **Bounded first desk pass complete; every full stack UNRESOL
 
 For all stacks: recording/disclosure approach, processing locations, retention/deletion, DPA/terms and customer/carrier verification remain prerequisites. No legal suitability verdict is made. No provider is eliminated solely for an UNKNOWN or small supported integration.
 
+## Market telephone constraints recorded for the next gate
+
+These are route constraints, not proof that any complete TAKAVEN stack is deployable.
+
+- **UAE / Twilio:** the current official UAE voice guidance describes Twilio UAE geographic numbers as inbound-only and prohibits outbound voice from them, including through SIP. UAE toll-free calls placed by the customer must terminate in the UAE, and UAE numbers cannot be transferred, resold or offered standalone to third parties. This means a customer-owned UAE carrier path or a labelled browser/test call is required before a warm transfer or callback is promised. [UAE voice guidelines](https://www.twilio.com/en-us/guidelines/ae/voice), [UAE number terms](https://www.twilio.com/en-us/legal/service-country-specific-terms/uae-phone-numbers), checked 2026-10-04.
+- **Mauritius / Twilio:** the current Mauritius regulatory guidance lists local regulatory documentation, including proof of address and an executed LOA where applicable. Number availability, carrier forwarding/SIP compatibility and a complete managed-agent route remain UNKNOWN until the account and intended number type are checked. [Mauritius regulatory guidance](https://www.twilio.com/en-us/guidelines/mu/regulatory), checked 2026-10-04.
+
+The first demo therefore uses `primary` mode in the draft profiles, a configured handoff placeholder and callback capture as the truthful fallback. No telephone route is considered ready until the destination and carrier behaviour are verified.
+
 ## Published cost components — USD, excluding unknown charges
 
 | Component | Verified unit | 500 / 1,500 minute illustration | Missing from total |

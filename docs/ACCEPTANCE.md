@@ -9,8 +9,8 @@ Any unresolved wrong appointment/date/time, fabricated price/policy, restricted 
 | Area | Required evidence before a paid pilot |
 |---|---|
 | Knowledge | Exact approved facts; unknowns acknowledged and routed without invention |
-| Booking | Availability checked; explicit confirmation before mutation; correct committed slot/timezone; no duplicate mutation on retries |
-| Changes/cancellation | Appropriate identity check; correct booking targeted; committed result matches spoken response |
+| Appointment requests | Requested service/date/time window, contact and vehicle read back accurately; staff/queue receipt recorded; no booking claim |
+| Changes/cancellation | **Deferred for the first demo.** When booking lifecycle is enabled, appropriate identity check; correct booking targeted; committed result matches spoken response |
 | Contact capture | Correct name/phone; confirm ambiguous spelling/numbers; accurate actionable handoff |
 | Corrections | Final details replace earlier details in both tool arguments and summary |
 | Escalation | Explicit human requests respected; urgent path and transfer-failure/callback fallback verified |
@@ -22,9 +22,9 @@ Any unresolved wrong appointment/date/time, fabricated price/policy, restricted 
 
 ## Source-review regression requirements
 
-Use the 15 cases in [qa/acceptance-cases.csv](../qa/acceptance-cases.csv) as the finalist catalogue. Critical checks include create/reschedule capacity races, delayed create replay after cancellation, changed-payload operation conflicts, timeout reconciliation, terminal retry exclusion, authenticated customer binding, no production stub success, truthful transfer status and summary delivery versus staff acknowledgement.
+Use the cases in [qa/acceptance-cases.csv](../qa/acceptance-cases.csv) as the staged catalogue. The first demo catalogue covers facts, lead capture, appointment-request capture, handoff, language and interruption behaviour. Booking/reschedule/cancellation/lookup cases are marked `DEFERRED` until a customer-owned booking authority is selected and tested. Later critical checks include capacity races, delayed create replay after cancellation, changed-payload operation conflicts, timeout reconciliation, terminal retry exclusion, authenticated customer binding, no production stub success, truthful transfer status and summary delivery versus staff acknowledgement.
 
-Each mandatory language needs its own appropriate coverage; a single case label spanning languages is not three executed tests. All cases are NOT_RUN. Local config lint is separate evidence.
+Each mandatory language needs its own appropriate coverage; a single case label spanning languages is not three executed tests. Cases marked `DEFERRED` are intentionally not active for the first demo; active cases remain `NOT_RUN` until tested. Local config lint is separate evidence.
 
 ## Evidence record
 

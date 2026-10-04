@@ -1,13 +1,13 @@
 # Lean benchmark plan — future phase
 
-**Design only. Not executed or authorised by repository setup.** Reconfirm survivors, access and spend limit after Phase 0. Compare complete deployable receptionist stacks, with reliability first and human telephone experience second.
+**Design only. Not executed or authorised by repository setup.** Reconfirm the provisional Retell mapping, route, access and spend limit after owner approval. Compare complete deployable receptionist stacks only if the provisional path hits a demonstrated blocker, with reliability first and human telephone experience second.
 
 ## Stages
 
 | Stage | Scope | Decision |
 |---|---|---|
 | 0: desk qualification | Fixed five candidate families | Qualified stacks, blockers, unknowns |
-| 1: minimal functional screening | About 10 scenarios per qualified stack | Eliminate reproduced critical failures or unsupported mandatory functions |
+| 1: minimal functional screening | Five approved smoke scenarios for the provisional stack | Eliminate reproduced critical failures or unsupported mandatory functions |
 | 2: human telephone smoke | About 2–3 calls per survivor | Select up to two finalists; do not rely solely on lab rankings |
 | 3: finalist stress testing | About 12–15 cases per finalist, targeted repeats | Reliability gates, blind human preference, commercial viability |
 
@@ -25,7 +25,7 @@ For each action, verify that the tool executed, its arguments were correct and t
 
 ## Source-review case catalogue
 
-The original 15-case [QA catalogue](../qa/README.md) turns inspected failure modes into acceptance expectations. Cases Q01–Q10 guide the lean screen; Q04 also gets concurrent reschedule stress. Q11–Q15 add replay, delayed duplicate, unknown outcome, retry termination, authentication/mock isolation and summary/delivery checks for finalists. These are design, not run results; count sessions and language variants explicitly.
+The [QA catalogue](../qa/README.md) turns inspected failure modes into acceptance expectations. The first screen uses request capture, lead qualification, handoff, language and interruption cases. Booking/reschedule/cancellation/lookup cases remain deferred until a customer-owned booking authority exists. These are design, not run results; count sessions and language variants explicitly.
 
 ## Minimum implementation after authorisation
 

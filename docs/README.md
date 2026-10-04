@@ -4,4 +4,4 @@ Start with [Project brief](PROJECT_BRIEF.md), [Decisions](DECISIONS.md) and [Arc
 
 The rebuilt foundation is in [configuration](../config/README.md), [action contracts](../spec/ACTION_CONTRACTS.md), [conversation policy](../spec/CONVERSATION_POLICY.md) and [QA catalogue](../qa/README.md). See [offline validation](../reports/OFFLINE_VALIDATION.md) for what actually ran.
 
-Follow [Execution rules](EXECUTION_RULES.md) for fixed scope, agent assignments and token/work controls. The active provider gate is [Phase 0 qualification](PHASE_0_BRIEF.md). [Status](STATUS.md) separates completed offline work from unexecuted vendor testing and deployment.
+Follow [Execution rules](EXECUTION_RULES.md) for fixed scope, agent assignments and token/work controls. Review the [execution plan](EXECUTION_PLAN.md) before the offline Retell mapping gate. [Status](STATUS.md) separates completed offline work from unexecuted vendor testing and deployment.

@@ -13,6 +13,8 @@ Existing [decisions](DECISIONS.md), [architecture](ARCHITECTURE.md) and [accepta
 | Gate | Deliverable | Exit condition |
 |---|---|---|
 | 0: desk qualification | Evidence register and short recommendation | Supported stacks, mandatory unknowns and smallest prerequisites recorded; no final winner |
+| 0A: alignment repair | Owner-approved scope, config, QA and execution plan | Validator passes; staged cases and provisional mapping scope are explicit |
+| 2A: offline provider mapping | Provisional vendor's native field/action mapping and gap register | Every required field has a supported mapping or labelled UNKNOWN; no provider push or live call |
 | 1: authorised comparison | Lean screen, telephone smoke and up to two finalist reviews | Reliability and language evidence; pilot recommendation or honest no-decision |
 | 2: master demo | Selected vendor's native config plus necessary supported integrations | One automotive flow meets acceptance |
 | 3: customer deployment | Intake, approved config, QA, handover and rollback | Client approval and tested human fallback |
@@ -70,6 +72,6 @@ After each gate, update STATUS, qualification/evidence and decisions only where 
 
 ## Current allocation
 
-Gate 0. Executor A: Retell, ElevenLabs and Synthflow. Executor B: OpenAI and Gemini plus existing supported telephone routes. Drift Guard: scope and independent evidence review. GitHub Reuse Scout: relevant existing configuration/integration assets before custom work. Main agent owns canonical files, decisions and publication.
+Gate 0A. Main agent owns the alignment repair and owner-review plan. Offline Retell mapping (Gate 2A) is queued until this checkpoint is approved. Drift Guard reviews the changed scope and phase transition. GitHub Reuse Scout is invoked only if a new integration or custom dependency is proposed. No provider sessions, audio, number purchase, paid activity or customer launch are authorised by this allocation.
 
-Stop after the desk report. No provider sessions, audio, number purchase, paid activity or customer launch are authorised by this delegation request.
+Stop after the offline mapping and owner approval. Do not begin live testing until the owner approves the route, reviewers, test scope and spending ceiling.
