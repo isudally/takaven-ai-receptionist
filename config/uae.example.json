@@ -104,9 +104,9 @@
   },
   "routing": {
     "intents": [
-      {"id": "service_enquiry", "qualification_fields": ["name", "phone", "vehicle", "service"], "action": "create_lead"},
-      {"id": "vehicle_sales_enquiry", "qualification_fields": ["name", "phone", "vehicle", "budget"], "action": "create_lead"},
-      {"id": "appointment_request", "qualification_fields": ["name", "phone", "vehicle", "service", "preferred_date", "preferred_time_window"], "action": "capture_appointment_request"}
+      {"id": "service_enquiry", "qualification_fields": ["name", "phone", "vehicle", "service", "urgency", "opportunity_classification"], "action": "create_lead"},
+      {"id": "vehicle_sales_enquiry", "qualification_fields": ["name", "phone", "vehicle", "budget", "urgency", "opportunity_classification"], "action": "create_lead"},
+      {"id": "appointment_request", "qualification_fields": ["name", "phone", "vehicle", "service", "preferred_date", "preferred_time_window", "urgency", "opportunity_classification"], "action": "capture_appointment_request"}
     ],
     "escalation": [
       {"id": "urgent_safety", "trigger": "Possible safety concern or vehicle unsafe to drive", "action": "human"},
