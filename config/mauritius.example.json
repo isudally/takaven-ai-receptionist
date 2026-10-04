@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "stage": "draft",
+  "client": {
+    "id": "demo-auto-mu",
+    "name": "Fictional Auto MU",
+    "market": "MU",
+    "timezone": "Indian/Mauritius",
+    "currency": "MUR"
+  },
+  "conversation": {
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "default_language": "en",
+    "ai_disclosure": true,
+    "voice_refs": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "facts": {
+    "approved": false,
+    "services": [
+      {
+        "id": "inspection",
+        "name": "Vehicle inspection",
+        "duration_minutes": 30,
+        "price_amount": "1200.00",
+        "price_basis": "fixed_demo",
+        "tax_wording": "Fictional demo amount; tax wording needs client approval"
+      },
+      {
+        "id": "fleet_enquiry",
+        "name": "Fleet enquiry",
+        "duration_minutes": 30,
+        "price_amount": null,
+        "price_basis": "human_quote",
+        "tax_wording": "Human quotation required"
+      }
+    ],
+    "hours": [
+      {
+        "day": "mon",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "tue",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "wed",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "thu",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "fri",
+        "open": "09:00",
+        "close": "17:00"
+      }
+    ],
+    "closures": []
+  },
+  "integration": {
+    "provider": null,
+    "agent_ref": null,
+    "booking_authority": null
+  },
+  "safety": {
+    "explicit_confirmation": true,
+    "identity_policy_ref": null,
+    "idempotency": "durable_operation_and_payload",
+    "availability": "authoritative_only",
+    "confirmation": "committed_receipt_only",
+    "unknown_outcome": "reconcile_before_retry",
+    "reschedule": "atomic_or_human",
+    "missing_config": "fail_closed",
+    "retries": "bounded_then_manual_review"
+  },
+  "operations": {
+    "mode": "overflow",
+    "customer_binding": "trusted_destination_and_agent",
+    "human_fallback_ref": null,
+    "rollback_ref": null
+  },
+  "privacy": {
+    "recording_enabled": false,
+    "messaging_requires_consent": true,
+    "retention_days": null
+  }
+}
