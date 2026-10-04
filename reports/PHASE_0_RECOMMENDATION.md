@@ -30,7 +30,7 @@ The additional scout found native configuration/integration leads in elevenlabs/
 
 ## Smallest next task
 
-A bounded documentation pass for Retell's mandatory unresolved integration/settings gates, followed by a route decision for one intended demo carrier and booking authority. Ask the owner only for the actual market/carrier/booking details when documentation can go no further. No need to collect five sets of credentials upfront.
+A bounded documentation pass for Retell's mandatory unresolved integration/settings gates, followed by an owner decision on one intended demo carrier and staff handoff destination. Appointment-request capture is the first action scope; no booking authority is required for the first demo. Ask the owner only for actual market/carrier details when documentation can go no further. No need to collect five sets of credentials upfront.
 
 Then propose the exact surviving stack, test/call count, reviewer needs and spending ceiling. Only after that stage is authorised, run the existing lean screen, real telephone smoke and finalist cases. If no supported route fits, report the demonstrated blocker before reopening discovery.
 
