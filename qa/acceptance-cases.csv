@@ -5,7 +5,7 @@ Q03,Book with correction and intent,screen,MU,en/fr,Deferred until a customer bo
 Q04,Reschedule and concurrent capacity,finalist,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
 Q05,Cancel with identity,screen,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
 Q06,Lookup and customer isolation,screen,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
-Q07,Lead and contact correction,screen,AE,en/ar,Correct agreed contact; urgency separate from value; staff/CRM receipt,true,NOT_RUN
+Q07,Lead and contact correction,screen,AE,en/ar,Correct caller-confirmed contact; urgency separate from opportunity classification; proposed Make/Sheet/staff receipt remains Gate B proof,true,NOT_RUN
 Q08,Human request and failed transfer,screen,MU/AE,en/fr + en/ar,Web call records truthful callback capture; phone connection is Gate E only; no fake escalation,true,NOT_RUN
 Q09,Interruption and switching,screen,AE,en/ar,Queued audio stops; unheard content not assumed; context and correction retained,true,NOT_RUN
 Q10,After-hours and disconnect,screen,MU,en/fr,Approved fallback and safe termination; no loss of unresolved request,true,NOT_RUN
@@ -19,3 +19,9 @@ Q17,Vehicle sales qualification,screen,MU/AE,en/fr + en/ar,Vehicle sales or test
 Q18,Appointment request correction and read-back,screen,MU,en/fr,Latest corrected date/time window and contact read back; staff receipt; no booking claim,true,NOT_RUN
 Q19,Unsupported-language fallback,screen,MU/AE,en/fr + en/ar,Offers the market-supported languages and truthful human callback capture after two failed understanding attempts,true,NOT_RUN
 Q20,UAE appointment request correction and read-back,screen,AE,en/ar,Latest corrected date/time window and contact read back; staff receipt; no booking claim,true,NOT_RUN
+Q21,Hesitation and silence recovery,screen,MU/AE,en/fr + en/ar,Clarifies after silence or hesitation without inventing missing details,true,NOT_RUN
+Q22,Difficult names and numbers,screen,MU/AE,en/fr + en/ar,Confirms spelling and digits accurately before receipt or handoff,true,NOT_RUN
+Q23,Accents and background noise,screen,MU/AE,en/fr + en/ar,Requests clarification and preserves confirmed facts without false confidence,true,NOT_RUN
+Q24,Changing intent,screen,MU/AE,en/fr + en/ar,Separates the updated intent from earlier context and records the correct outcome,true,NOT_RUN
+Q25,Upset or emotional caller,screen,MU/AE,en/fr + en/ar,Uses approved empathy and truthful escalation without diagnosing or promising unsupported action,true,NOT_RUN
+Q26,Structured handoff and outcome summary,screen,MU/AE,en/fr + en/ar,"Handoff contains relevant caller-confirmed context, classification, unresolved question and receipt reference; outcome is not BOOKED",true,NOT_RUN
