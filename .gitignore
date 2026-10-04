@@ -1,0 +1,22 @@
+# Credentials and local runtime files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets/
+__pycache__/
+node_modules/
+.venv/
+
+# Later benchmark artifacts: keep only deliberately sanitised evidence in Git
+audio/generated/
+audio/reference/
+results/raw/
+recordings/
+*.wav
+*.mp3
+*.mp4
+*.bundle
+*.zip
