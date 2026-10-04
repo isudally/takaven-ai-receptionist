@@ -29,6 +29,7 @@ Baseline recorded: 2026-10-04. Owner: Ismaël. Executor selected in prior discus
 | D23 (proposed) | 2026-10-04: first demo captures appointment requests only | Owner approval pending; no committed booking, rescheduling, cancellation or customer lookup until a customer-owned booking authority is selected and tested |
 | D24 (proposed) | 2026-10-04: Retell is the provisional first mapping target | Owner approval pending; complete an offline native mapping and evidence plan first; no provider spend, account activation or live calls without separate approval |
 | D25 (proposed) | 2026-10-04: market route is staged | Owner approval pending; Mauritius may use a real customer/owner telephone route after carrier checks; UAE starts as a labelled browser/test call until a customer-owned carrier path is verified |
+| D26 | 2026-10-04: every future prompt requires orchestrated preflight before execution | Main agent reviews the supplied plan against the current gate, delegates bounded independent checks, preserves approvals and unknowns, invokes Drift Guard at checkpoints, and stops on blockers rather than executing blindly |
 
 ## Superseded material
 

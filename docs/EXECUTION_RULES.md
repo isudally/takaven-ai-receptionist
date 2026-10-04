@@ -2,6 +2,16 @@
 
 Owner/orchestrator: main Codex agent. Authorised by Ismael on 2026-10-04: delegate execution while preventing drift, overengineering and unnecessary token use. These rules apply to this project and do not create a background service.
 
+## Mandatory preflight for every future prompt
+
+Before changing files, external state or project phase, the main agent creates a compact shared index containing branch/worktree state, applicable instructions, canonical documents, current gate, known contradictions, acceptance criteria, permitted effects and approvals. The supplied prompt or review is then checked against that index; it is never treated as self-authorising.
+
+The main agent must state the objective, active gate, in-scope work, explicit exclusions, allowed tools/data/external effects, approval owner and stop conditions. Independent audits may run in parallel; edits and decisions are integrated once by the main agent. Agents report evidence, path, status and smallest correction only. They do not publish, spend, provision, contact people, choose a provider, reopen frozen decisions or delegate further.
+
+No later gate, provider/API/telephone call, account mutation, spend, provisioning, customer data, production change, new integration/backend/dependency or destructive action starts without explicit owner approval. If evidence is insufficient, a required guarantee is unproven, or a genuine contradiction blocks freezing, report `BLOCKED` and stop the affected work. Preserve `UNKNOWN` and `client review required` explicitly.
+
+The efficient execution shape is: **preflight → shared index → parallel bounded audits → one integration edit → one authoritative validation → final verdict and next action**. Reuse existing evidence, assign each path family one owner, avoid repeated full reviews and stop once the acceptance criteria are met or explicitly blocked.
+
 ## Fixed outcome
 
 Deliver one reliable automotive receptionist demo using existing voice technology, then a repeatable customer configuration, integration, acceptance and handover service. Mauritius EN/FR; UAE EN/AR; no Kreol. Customer-owned accounts preferred. One-off implementation fee is separate from recurring vendor usage.
