@@ -2,16 +2,16 @@
 
 Configure existing voice technology into reliable telephone receptionists for SMEs in Mauritius and the UAE. Sell a one-off implementation and handover; customers own accounts and pay their underlying platform/telephone charges.
 
-**Current stage: configuration foundation rebuilt; bounded provider desk pass complete.** All five full stacks remain unresolved. No provider is selected, no live agent is deployed, and no provider tests, audio generation or paid calls have run.
+**Current stage: Gate 0A alignment complete; Retell is the provisional Gate B mapping target.** No live agent is deployed, and no provider tests, audio generation or paid calls have run.
 
 ## What is implemented
 
 - [Source review](docs/GITHUB_REUSE_REVIEW.md): 42 inspected files across six repositories, with adopt/skip decisions and [pinned provenance](docs/SOURCE_INVENTORY.json).
-- [Implementation architecture](docs/ARCHITECTURE.md): existing voice runtime, appointment-request receipt, deferred booking authority and human fallback.
+- [Implementation architecture](docs/ARCHITECTURE.md): vendor-neutral receptionist standard, structured handoff/outcomes, proposed receipt path, deferred booking authority and human fallback.
 - [Client configuration pack](config/README.md): separate fictional Mauritius EN/FR and UAE EN/AR draft profiles.
 - [Action contracts](spec/ACTION_CONTRACTS.md) and [conversation policy](spec/CONVERSATION_POLICY.md): committed results, identity, corrections, retries and escalation.
 - [Offline validator](scripts/validate_config.py): strict v1 configuration checks and deterministic hashes; no network or provider credentials.
-- [Acceptance catalogue](qa/README.md): 20 staged cases covering the source review's failure modes; booking-lifecycle cases are DEFERRED and provider cases remain NOT_RUN.
+- [Acceptance catalogue](qa/README.md): staged cases covering facts, qualification, lead/request receipts, handoff, outcomes and natural-conversation risks; booking-lifecycle cases are DEFERRED and provider cases remain NOT_RUN.
 
 No external repository code, prompts, workflow files or migrations were imported. Restricted repositories informed independently written requirements. Native vendor tooling will be used where it fits the qualified stack.
 
@@ -30,7 +30,7 @@ Both example profiles validate as drafts. The self-test rejects 23 unsafe/invali
 
 Follow the owner-review [execution plan](docs/EXECUTION_PLAN.md) and [Execution rules](docs/EXECUTION_RULES.md): main Codex orchestrates two bounded executors, a Drift Guard and a GitHub Reuse Scout. Checkpoints prevent scope expansion and duplicated custom work.
 
-The [first desk recommendation](reports/PHASE_0_RECOMMENDATION.md) prioritises resolving Retell's managed route, with ElevenAgents next. [Provider qualification](docs/PROVIDER_QUALIFICATION.md) records verified identities/prices and mandatory unknowns. Resolve those before proposing a separately authorised lean benchmark. Do not build five adapters, a voice engine, a booking database or a dashboard.
+The [execution plan](docs/EXECUTION_PLAN.md) freezes the first-demo boundary and hands off to Gate B offline Retell mapping. [Provider qualification](docs/PROVIDER_QUALIFICATION.md) records Retell as provisional while preserving route, security, ownership and performance unknowns. Do not build adapters, a voice engine, a booking database, CRM or dashboard.
 
 ## Documentation
 

@@ -11,7 +11,7 @@ No credentials are required for public-document Phase 0. Do not request all prov
 | Before connector-based execution | Grant this repository access through existing GitHub app connection only if a later operation requires it | Ismaël, only if required | OPTIONAL DEPENDENCY; authorised browser publication works |
 | Orchestration | Main agent delegates bounded work; Drift Guard and Reuse Scout check scope/reuse | Codex | ACTIVE; assignment/pre-merge guard checks completed |
 | Product gate | First public-document Phase 0 desk qualification pass | Codex | COMPLETE; all full stacks unresolved; no credentials needed |
-| Next task | Apply the owner-approved execution plan: offline Retell mapping, then route/access decision | Codex; account owner only when necessary | PENDING; no paid testing authorised |
+| Next task | Gate B offline Retell mapping | Codex; account owner only when necessary | READY FOR OWNER INSTRUCTION; not started; no paid testing authorised |
 | After Phase 0 | Resolve carrier/account-specific unknowns for actual MU/UAE phone paths | Ismaël plus relevant account/carrier owner | NOT REQUESTED |
 | Before chargeable testing | Approve Retell smoke scenarios, route, reviewer coverage and spending ceiling | Ismaël | NOT REQUESTED |
 | Before survivor testing | Create/activate only required accounts; complete any vendor/carrier verification | Account owner | NOT REQUESTED |
