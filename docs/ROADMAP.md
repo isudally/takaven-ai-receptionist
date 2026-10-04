@@ -4,7 +4,7 @@ Planning target: 30 days from authorised execution with essential access. Dates 
 
 | Window | Work | Exit condition |
 |---|---|---|
-| First step | Owner review and alignment repair | D23–D25, config/QA changes and execution plan approved |
+| First step | Owner review and alignment repair | D23–D25, config/QA changes and execution plan approved — **COMPLETE (Gate 0A)** |
 | Next step | Offline Retell mapping | Native mapping, route gaps and acceptance evidence plan; no push or live call |
 | Days 1–3 after test authorisation | Lean core screening, phone smoke, finalist stress review | Pilot engine selected or honest no-decision report |
 | Days 4–7 | Configure selected master automotive receptionist | Facts/actions/languages/handoffs working |

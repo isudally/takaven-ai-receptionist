@@ -4,7 +4,7 @@ Decision date: 2026-10-04. The source review informs this design; no provider or
 
 ## Product boundary
 
-TAKAVEN sells a client-specific configuration, supported integrations, acceptance evidence and handover. The selected voice platform operates speech/model/turn-taking. Customer-owned telephone routing and existing calendar/CRM remain authoritative. A supported automation service connects them only when native integration is insufficient. No custom booking database, dashboard, voice runtime or universal adapter framework.
+TAKAVEN Receptionist Standard is a vendor-neutral implementation package: approved knowledge, conversation behaviour, qualification rules, action contracts, structured handoff, outcome classification, QA evidence and deployment/handover method. The selected voice platform operates speech/model/turn-taking. Customer-owned provider accounts, telephone routing, calendar/CRM and data are preferred where supported and practical. A supported automation service connects them only when native integration is insufficient. No custom booking database, dashboard, voice runtime or universal adapter framework.
 
 ```mermaid
 flowchart TD

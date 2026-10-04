@@ -26,9 +26,9 @@ Baseline recorded: 2026-10-04. Owner: Ismaël. Executor selected in prior discus
 | D20 | 2026-10-04: dedicated read-only Drift Guard | Checks assignment, merge and phase transitions; CLEAR/FLAG/STOP verdict; main agent resolves STOP before proceeding |
 | D21 | 2026-10-04: bounded desk pass completed; no final engine selected | All complete stacks unresolved; resolve Retell first, ElevenAgents next; no automatic exclusion for small supported business-integration glue |
 | D22 | 2026-10-04: dedicated GitHub Reuse Scout | Checks close existing implementations before custom code; flags overlap, provenance, licence and gaps without changing scope or copying restricted code |
-| D23 (proposed) | 2026-10-04: first demo captures appointment requests only | Owner approval pending; no committed booking, rescheduling, cancellation or customer lookup until a customer-owned booking authority is selected and tested |
-| D24 (proposed) | 2026-10-04: Retell is the provisional first mapping target | Owner approval pending; complete an offline native mapping and evidence plan first; no provider spend, account activation or live calls without separate approval |
-| D25 (proposed) | 2026-10-04: market route is staged | Owner approval pending; Mauritius may use a real customer/owner telephone route after carrier checks; UAE starts as a labelled browser/test call until a customer-owned carrier path is verified |
+| D23 | 2026-10-04: first demo boundary accepted | The first demo supports approved FAQs, service and vehicle-sales/test-drive qualification, lead capture, appointment-request capture, structured handoff, truthful escalation/callback fallback and post-call outcomes. Appointment availability, booking, rescheduling, cancellation and customer lookup remain deferred until a customer-owned booking authority is selected and tested |
+| D24 | 2026-10-04: Retell is the provisional first mapping target | Do not reopen provider comparison unless Retell fails a demonstrated mandatory gate. Gate B is offline mapping only; no provider spend, account activation or live calls without separate approval |
+| D25 | 2026-10-04: market route is staged | Gate D uses Retell web calls/test paths with fictional data; Mauritius real telephone routing moves to Gate E after carrier verification; UAE remains a labelled browser/test route until a suitable customer-owned carrier path is verified |
 | D26 | 2026-10-04: every future prompt requires orchestrated preflight before execution | Main agent reviews the supplied plan against the current gate, delegates bounded independent checks, preserves approvals and unknowns, invokes Drift Guard at checkpoints, and stops on blockers rather than executing blindly |
 
 ## Superseded material
@@ -42,9 +42,8 @@ Names such as `GPT-Live-1`, `Gemini 3.8 Live`, `ElevenAgents` and `Reception.ai`
 - Exact available product/model/plan for each candidate; no silent substitutions.
 - Complete supported telephone route for each target market and customer-number setup.
 - Accounts, trial access, reviewer availability, spend cap and execution start date.
-- Appointment-request capture is the first action scope; a booking authority is deferred.
-- Retell is the provisional first mapping target; the initial live-test spend ceiling remains owner approval.
-- Mauritius and UAE demo route, human handoff destination and callback fallback.
+- Gate 0A alignment is complete; Gate B offline Retell mapping is the next project gate and has not started.
+- The Retell-to-Make receipt path, data handling, reviewer availability and any live-test ceiling remain Gate B or later unknowns/approvals.
 - Final benchmark count, tied to qualified survivors and available access.
 - Launch prices, support boundaries and optional care scope.
 - Data handling, recording/AI disclosure and contractual requirements for the specific deployment.

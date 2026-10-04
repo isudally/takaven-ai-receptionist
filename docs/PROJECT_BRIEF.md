@@ -4,7 +4,7 @@
 
 Within a 30-day execution target, create a repeatable deployment method for an AI receptionist using existing commercial platforms and secure the first paid installation. The clock starts when execution is authorised and essential access is available; this documentation task does not start provider testing.
 
-Customer value: answer enquiries, capture qualified opportunities and appointment requests, and give staff actionable handoffs. The central quality requirement is natural behaviour during real telephone conversations combined with operational reliability.
+Customer value: answer enquiries, qualify and capture opportunities and appointment requests, and give staff an actionable structured handoff. TAKAVEN Receptionist Standard packages the conversation behaviour, approved knowledge, qualification rules, action contracts, outcome summaries, QA and deployment/handover method around a customer-owned provider and data path where practical. The central quality requirement is natural behaviour during real telephone conversations combined with operational reliability.
 
 ## Market and initial demonstration
 
@@ -23,7 +23,7 @@ Historical working implementation prices are commercial hypotheses, not validate
 
 ## Initial product
 
-Answer from approved business facts; identify language and intent; capture contact details; qualify service and vehicle-sales enquiries; capture appointment requests; escalate; produce structured summaries and priority notifications. The first demo must read back the requested service, preferred date/time window, caller details and vehicle information, then provide a truthful staff receipt. It must not claim that a calendar slot was booked.
+Answer from approved business facts; identify language and intent; capture caller-confirmed contact details; qualify service and vehicle-sales enquiries; capture leads and appointment requests; produce the structured handoff brief; escalate truthfully; and produce controlled outcome summaries and notifications. The first demo must read back the requested service, preferred date/time window, caller details and vehicle information, then provide a receipt only after the proposed Gate B route has been proven. It must not claim that a calendar slot was booked.
 
 Support primary, overflow and after-hours modes through existing carrier/platform functionality where verified. Implement one safe demo path first. Customer recognition requires supported access and appropriate identity checks; caller ID alone does not authorise disclosure or appointment changes.
 

@@ -6,7 +6,7 @@ Updated 2026-10-04.
 
 - Created the GitHub repository and initial documentation; it is temporarily public for external review and should return to private before commercial work.
 - Reviewed 42 selected source/config/licence files across six related repositories; pinned source inventory and explicit adopt/skip decisions.
-- Rebuilt the independent implementation foundation: architecture, appointment-request action contracts, conversation policy, two fictional draft automotive profiles, offline lint and 20-case staged acceptance catalogue.
+- Rebuilt the independent implementation foundation: architecture, first-demo action contracts, conversation policy, two fictional draft automotive profiles, offline lint and staged acceptance catalogue.
 - Local lint validated both profiles; 23 negative configuration cases rejected; deterministic hashes verified.
 - Updated deployment/acceptance instructions to address committed outcomes, retries, concurrent changes, authentication, customer binding and truthful staff handover.
 - Established bounded orchestration, a dedicated Drift Guard and GitHub Reuse Scout; completed the first public-document provider pass with two execution agents and an independent reviewer.
@@ -15,7 +15,7 @@ Updated 2026-10-04.
 
 ## Current state
 
-Provider qualification: FIRST_DESK_PASS_COMPLETE; all five full stacks UNRESOLVED. Exact GPT-Live/Gemini Live and ElevenAgents identities verified; remaining gates in qualification register. Winner: NONE. Live agent: NONE. Production integrations: NONE. Active acceptance cases: NOT_RUN; booking-lifecycle cases: DEFERRED. Launch readiness: NOT_ASSESSED.
+Provider qualification: RETELL_PROVISIONAL_MAPPING_TARGET; all full-stack performance and route evidence remain unresolved. Winner: NONE. Live agent: NONE. Production integrations: NONE. Active acceptance cases: NOT_RUN; booking-lifecycle cases: DEFERRED. Launch readiness: NOT_ASSESSED.
 
 Configuration pack: VALID_DRAFT only. Provider/agent IDs, voice references, identity policy, approved facts, retention, handoff destination and rollback remain unresolved for the first demo. Booking authority is explicitly deferred. Local validation does not approve deployment.
 
@@ -23,7 +23,7 @@ Repository: TEMPORARILY PUBLIC for the external review at https://github.com/isu
 
 ## Next action
 
-Review and approve `docs/EXECUTION_PLAN.md`, then complete the offline Retell mapping. No credentials, calls or chargeable resources are needed for that gate. Do not start live testing until the owner approves route, reviewers and spending ceiling.
+Gate 0A is complete. Gate B offline Retell mapping is the next project gate and has not started. It requires the owner's instruction; no credentials, calls or chargeable resources are authorised by Gate 0A.
 
 ## Evidence and handover
 

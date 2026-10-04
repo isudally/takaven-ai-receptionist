@@ -6,7 +6,20 @@ Target: complete client configuration within approximately one business day afte
 
 Collect business identity, authorised approver, selected market/languages, reception mode, hours/timezone/holidays, services/prices/policies, approved FAQs, restrictions, qualification/VIP rules, escalation contacts and callback expectations. Record spelling/pronunciation preferences.
 
-Confirm customer-owned provider/carrier account, supported routing, delegated access, staff/queue notification destination and approved data/disclosure/recording practices. For the first demo, map the Retell custom function to a Make webhook that sends one staff email, upserts one Google Sheet row and returns a receipt ID through Make's webhook response. Verify Retell's signed request before accepting it; keep the endpoint and credentials outside this repository. A calendar/CRM and booking authority are optional later integrations; they are not required for the first appointment-request demo. Keep secrets outside this repository.
+Confirm that every authoritative system is customer-owned or explicitly customer-authorized: provider/voice account, carrier, Make/webhook, Sheet or CRM, mailbox/notification destination and retained data. Confirm supported routing, delegated access and approved data/disclosure/recording practices. The proposed first-demo route is Retell action → Make webhook → Google Sheet row plus staff email → receipt ID. Gate B must prove authenticity, replay, serialization and notification behaviour before this becomes an authoritative receipt. A calendar/CRM and booking authority are optional later integrations; they are not required for the first demo. Keep secrets and caller data outside this repository.
+
+## First-demo data-flow map — Gate B design, not deployment proof
+
+The following is the minimum data-flow inventory for fictional-data mapping. Retention, processing region, deletion and contractual suitability remain `UNKNOWN — client/legal review required` until the customer-owned accounts and plans are selected.
+
+| System | Data categories and purpose | Owner/access | Storage/retention/deletion | Controls and status |
+|---|---|---|---|---|
+| Caller / Retell | Caller-confirmed name/contact; language; intent; service/vehicle; timeframe; urgency; classification; call ID; agent/workspace metadata; tool arguments; transcript/recording where provider settings enable them | Customer-owned provider account; approved TAKAVEN/customer admins | Provider storage, processing region, metadata/transcript/recording retention and deletion: `UNKNOWN — client/legal review required` | Fictional data only; recording is disabled in draft config but provider transcript/metadata retention is not assumed absent; disclosure/consent remains client review |
+| Make webhook | Signed request headers and original representation required for verification; allowlisted action fields; payload digest; execution/receipt state | Customer-owned Make account; named operators only | Webhook queue, execution logs, incomplete executions, headers/body retention and deletion: `UNKNOWN — client/legal review required` | Gate B must prove raw-body/signature handling, timestamp/replay controls, serialization, fail-closed behaviour and no unnecessary transcript forwarding |
+| Google Sheet | Allowlisted handoff/lead/request fields; receipt token; payload digest; delivery/conflict status | Customer-owned Sheet/account; staff ACLs | Sheet row/revision history, retention and deletion owner: `UNKNOWN — client/legal review required` | Protected/append-only semantics and exact replay behaviour are Gate B requirements; do not use a row number alone as an immutable receipt |
+| Staff email | Minimal structured handoff and outcome; receipt reference; no full transcript unless separately approved | Customer-owned mailbox/group; named staff recipients | Mailbox retention, forwarding and deletion: `UNKNOWN — client/legal review required` | Notification delivery is separate from staff acknowledgement; duplicate-email prevention is a Gate B/D proof requirement |
+
+No raw transcript or full provider call object should be forwarded to Make, Sheet or email unless an approved mapping requires it. Real customer data remains prohibited until account ownership, disclosure, retention, access and deletion responsibilities are approved.
 
 ## Configure
 

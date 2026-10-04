@@ -7,25 +7,29 @@
 | Stage | Scope | Decision |
 |---|---|---|
 | 0: desk qualification | Fixed five candidate families | Qualified stacks, blockers, unknowns |
-| 1: minimal functional screening | Five approved smoke scenarios for the provisional stack | Eliminate reproduced critical failures or unsupported mandatory functions |
+| 1: minimal functional screening | Seven approved logical smoke scenarios for the provisional stack | Eliminate reproduced critical failures or unsupported mandatory functions |
 | 2: human telephone smoke | About 2–3 calls per survivor | Select up to two finalists; do not rely solely on lab rankings |
 | 3: finalist stress testing | About 12–15 cases per finalist, targeted repeats | Reliability gates, blind human preference, commercial viability |
 
 Counts are initial allowances, not statistical proof. For three survivors, roughly 30 core sessions plus 24–30 finalist sessions and repeats is a starting budget, not a promise. A scenario becomes multiple sessions if languages/runs are duplicated; count actual sessions. Account for smoke calls and finalist telephone calls separately to avoid double counting. No validated cost exists yet.
 
-## Core screening cases
+## Current first-demo screening cases
 
-FAQ; availability; confirmed booking; corrected booking/date; reschedule; cancellation; contact plus registration capture; unknown question; explicit human request; interruption with language switching. Distribute EN/FR/AR across screening; require meaningful coverage of every mandatory language before choosing finalists. Later stress calls deepen each language; no Kreol.
+Approved facts and unknown handling; service enquiry and lead capture; vehicle-sales/test-drive qualification; appointment-request capture with correction/read-back; structured handoff and callback fallback; post-call outcome summary; language switching; interruption, hesitation/silence, difficult names/numbers, accents/background noise, changing intent and upset callers; unsupported-language fallback; exact replay and changed-payload reconciliation where applicable. Distribute MU EN/FR and UAE EN/AR across the seven logical scenarios; actual language variants and calls are separate sessions. No Kreol.
+
+## Deferred booking-lifecycle cases
+
+Authoritative availability, confirmed booking, corrected booking/date against a live authority, rescheduling, cancellation, customer lookup, duplicate-booking testing and booking-specific capacity races remain `DEFERRED`. Preserve these requirements for a later customer-owned booking authority; they are not part of the current screening gate.
 
 ## Finalist cases
 
-Hesitation and silence; overlapping speech/barge-in; multiple corrections; difficult names; phone/email/plate spelling; VIN when the client actually requires it; natural Gulf/UAE-relevant Arabic; EN/FR and EN/AR switching; background noise; prolonged interaction; upset caller; unavailable slot; tool timeout/failure; duplicate booking attempt; failed transfer; after-hours fallback; brief concurrency smoke.
+Hesitation and silence; overlapping speech/barge-in; multiple corrections; difficult names; phone/email/plate spelling; VIN when the client actually requires it; natural Gulf/UAE-relevant Arabic; EN/FR and EN/AR switching; background noise; prolonged interaction; upset caller; tool timeout/failure; failed transfer; after-hours fallback; brief concurrency smoke for the receipt path. Booking-specific concurrency remains deferred.
 
 For each action, verify that the tool executed, its arguments were correct and the final spoken confirmation matches the committed result. A convincing transcript does not prove a booking happened. Test retries/idempotency and authentication for changes; avoid using recognition alone as identity verification.
 
 ## Source-review case catalogue
 
-The [QA catalogue](../qa/README.md) turns inspected failure modes into acceptance expectations. The first screen uses request capture, lead qualification, handoff, language and interruption cases. Booking/reschedule/cancellation/lookup cases remain deferred until a customer-owned booking authority exists. These are design, not run results; count sessions and language variants explicitly.
+The [QA catalogue](../qa/README.md) turns inspected failure modes into acceptance expectations. The first screen uses the seven logical scenarios, with separate verdicts and explicit receipt/outcome evidence. Booking/reschedule/cancellation/lookup cases remain `DEFERRED` until a customer-owned booking authority exists. These are design, not run results; count sessions and language variants explicitly.
 
 ## Minimum implementation after authorisation
 

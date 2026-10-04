@@ -82,6 +82,6 @@ After each gate, update STATUS, qualification/evidence and decisions only where 
 
 ## Current allocation
 
-Gate 0A. Main agent owns the alignment repair and owner-review plan. Offline Retell mapping (Gate 2A) is queued until this checkpoint is approved. Drift Guard reviews the changed scope and phase transition. GitHub Reuse Scout is invoked only if a new integration or custom dependency is proposed. No provider sessions, audio, number purchase, paid activity or customer launch are authorised by this allocation.
+Gate 0A is complete. Main agent owns the frozen alignment baseline; offline Retell mapping (Gate 2A) is queued until the owner instructs it to begin. Drift Guard reviews the changed scope and phase transition. GitHub Reuse Scout is invoked only if a new integration or custom dependency is proposed. No provider sessions, audio, number purchase, paid activity or customer launch are authorised by this allocation.
 
 Stop after the offline mapping and owner approval. Do not begin live testing until the owner approves the route, reviewers, test scope and spending ceiling.

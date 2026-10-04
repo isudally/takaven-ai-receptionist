@@ -8,7 +8,7 @@ Checked 2026-10-04. **Bounded first desk pass complete; every full stack UNRESOL
 |---|---|---|---|---|---|---|---|---|---|
 | GPT-Live 1 `gpt-live-1` + Twilio Agent Connect | PASS [O1,O2] | UNKNOWN | UNKNOWN | UNKNOWN | Model documented; partner UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | UNRESOLVED |
 | Gemini 3.8 Live `gemini-3.8-live` + Voximplant Gemini Live API Client | PASS model [G1]; pairing UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | Model documented; partner UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | UNRESOLVED |
-| Retell AI Voice Agents + supported elastic SIP + existing booking authority | PASS [R1,R2] | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN in bounded pass | UNKNOWN | Tool documented; exact route UNKNOWN [R3] | Partial evidence; ownership / total cost UNKNOWN | UNRESOLVED; first to resolve |
+| Retell AI Voice Agents web calls + proposed Make receipt route | PASS [R1,R2] | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN in bounded pass | UNKNOWN | Web-call callback capture and Make receipt/security UNKNOWN; telephone handoff deferred | Partial evidence; ownership / total cost UNKNOWN | PROVISIONAL MAPPING TARGET; Gate B unresolved |
 | ElevenLabs ElevenAgents + native Twilio or supported SIP + existing booking authority | PASS [E1] | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN pending exact setting evidence | UNKNOWN | UNKNOWN | Partial platform support; pricing / handover UNKNOWN | UNRESOLVED |
 | Synthflow AI Voice Agents + approved SIP/native telephony + Cal.com | PASS [S1,S2] | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | Booking documented; change/cancel UNKNOWN [S4] | Warm-transfer features documented; exact route UNKNOWN [S3] | CSV documented; full ownership / total cost UNKNOWN | UNRESOLVED; commercial concern |
 
