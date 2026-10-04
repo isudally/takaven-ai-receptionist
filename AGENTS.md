@@ -2,7 +2,9 @@
 
 ## Current authorisation
 
-This repository establishes the project documentation. The next planned task is **Phase 0 desk qualification only**; perform it when instructed. Do not interpret this file as permission to execute later stages.
+The user authorised source-level review of related repositories and an independent rebuild using their useful patterns. That work produced documentation, draft client configuration, action/conversation contracts, acceptance design and offline lint. No live provider testing, provisioning or paid activity is authorised by that request.
+
+The next gate is Phase 0 public-document provider qualification. Do not interpret this file as permission to execute later chargeable stages.
 
 Read `README.md`, `docs/STATUS.md`, `docs/DECISIONS.md` and `docs/PHASE_0_BRIEF.md` before work. Inspect existing files before changing them. Preserve useful work.
 
@@ -10,7 +12,8 @@ Read `README.md`, `docs/STATUS.md`, `docs/DECISIONS.md` and `docs/PHASE_0_BRIEF.
 
 - Buy, configure and integrate existing technology. No proprietary voice platform.
 - Do not build speech recognition, TTS, LLMs, telephony, CRM, calendars, analytics platforms, dashboards or a generic agent framework.
-- No benchmark code, API calls, generated audio or calls during Phase 0.
+- Offline configuration lint is authorised and implemented. No provider adapters, benchmark execution, provider API calls, generated audio or calls during Phase 0.
+- Read docs/ARCHITECTURE.md, docs/GITHUB_REUSE_REVIEW.md and spec/ACTION_CONTRACTS.md before changing the rebuilt pack. Do not import restricted source, prompts, workflows or migrations.
 - Do not buy numbers, activate paid plans, create paid resources or consume provider test credits without explicit authorisation.
 - No live customer data in research or benchmarking. Later demos use fictional information.
 - Do not commit credentials, tokens, call recordings or real personal data. Use environment variables and provider-supported secret storage later.
