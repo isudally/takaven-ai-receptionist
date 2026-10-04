@@ -1,6 +1,6 @@
 # Phase 0 desk recommendation — 2026-10-04
 
-**Recommendation:** resolve Retell's supported managed route first; keep ElevenAgents as the next comparison candidate. Do not select an engine or begin a paid benchmark yet. All five complete stacks remain UNRESOLVED in the [evidence register](../docs/PROVIDER_QUALIFICATION.md).
+**Recommendation (historical desk output, superseded by accepted D24):** Retell is the accepted provisional first mapping target. Do not reopen provider comparison unless Retell fails a demonstrated mandatory gate; do not begin a paid benchmark yet. Other complete stacks remain unresolved in the [evidence register](../docs/PROVIDER_QUALIFICATION.md). The current execution state is Gate 0A complete; Gate B offline Retell mapping is next and has not started.
 
 Two bounded execution agents completed the initial public-document pass. The dedicated Drift Guard performed assignment and pre-merge checks. No vendor session, audio, API action, account, phone number, outreach or spend occurred.
 
@@ -8,8 +8,8 @@ Two bounded execution agents completed the initial public-document pass. The ded
 
 | Priority | Candidate | Next smallest resolution |
 |---|---|---|
-| 1 | Retell | Exact required language/turn configuration, full supported booking lifecycle, ownership/export and one actual carrier route |
-| 2 | ElevenAgents | Exact pricing/plan, native booking and human fallback, language/route/ownership prerequisites |
+| 1 | Retell | Gate B proof of native mapping, receipt route, security/replay, ownership/export and later carrier route |
+| Hold | Other providers | Reopen only if Retell fails a demonstrated mandatory gate |
 | Hold | GPT-Live 1 + Twilio Agent Connect | Partner setup/package and existing business integrations; bound integration effort |
 | Hold | Gemini 3.8 Live + Voximplant | Exact pairing and supported workflow; bound integration effort |
 | Hold | Synthflow | Verify whether the published enterprise commercial floor fits the intended offer before further setup |
@@ -30,7 +30,7 @@ The additional scout found native configuration/integration leads in elevenlabs/
 
 ## Smallest next task
 
-A bounded documentation pass for Retell's mandatory unresolved integration/settings gates, followed by an owner decision on one intended demo carrier and staff handoff destination. Appointment-request capture is the first action scope; no booking authority is required for the first demo. Ask the owner only for actual market/carrier details when documentation can go no further. No need to collect five sets of credentials upfront.
+Gate 0A alignment is complete. Gate B offline Retell mapping is the next project gate. It must resolve the mandatory integration/settings, receipt, security/replay and privacy unknowns before any provider mutation or live testing. No need to collect multiple provider credentials upfront.
 
 Then propose the exact surviving stack, test/call count, reviewer needs and spending ceiling. Only after that stage is authorised, run the existing lean screen, real telephone smoke and finalist cases. If no supported route fits, report the demonstrated blocker before reopening discovery.
 
