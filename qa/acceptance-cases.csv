@@ -9,7 +9,7 @@ Q07,Lead and contact correction,screen,AE,en/ar,Correct agreed contact; urgency 
 Q08,Human request and failed transfer,screen,MU/AE,en/fr + en/ar,Web call records truthful callback capture; phone connection is Gate E only; no fake escalation,true,NOT_RUN
 Q09,Interruption and switching,screen,AE,en/ar,Queued audio stops; unheard content not assumed; context and correction retained,true,NOT_RUN
 Q10,After-hours and disconnect,screen,MU,en/fr,Approved fallback and safe termination; no loss of unresolved request,true,NOT_RUN
-Q11,Replay and distinct request intents,finalist,MU,en/fr,Retell call_id plus intent is the Make upsert key; replay produces no second Sheet row; changed payload is flagged; distinct intents get distinct receipts,true,NOT_RUN
+Q11,Replay and distinct request intents,finalist,MU,en/fr,At most one committed request per intent per call; replay produces no second Sheet row or email; changed payload is flagged; a second same-intent request routes to human follow-up,true,NOT_RUN
 Q12,Delayed duplicate after cancellation,finalist,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
 Q13,Timeout and retry termination,finalist,MU,en/fr,Unknown Make delivery outcome is reconciled against the call_id-plus-intent row before retry; finite attempts then manual review; no request store,true,NOT_RUN
 Q14,Authentication and mock isolation,finalist,AE,en/ar,Invalid/replayed request denied; test auth and stub results cannot enter production,true,NOT_RUN
