@@ -43,7 +43,7 @@ SHAPE = {
         )}
     },
     "operations": {
-        "mode": "string", "customer_binding": "string",
+        "mode": "string", "customer_binding": "string", "request_destination_ref": "string",
         "handoff": {"destination_ref": NULL_STRING, "hours": "string", "fallback": "string"},
         "rollback_ref": NULL_STRING
     },
@@ -170,6 +170,8 @@ def lint(config):
     ops = config["operations"]
     require(ops["mode"] in ("primary", "overflow", "after_hours"), "Invalid reception mode")
     require(ops["customer_binding"] == "trusted_destination_and_agent", "Unsafe customer binding")
+    require(ops["request_destination_ref"] == "make:webhook:staff-email-and-sheet",
+            "First-demo request destination must be the documented Make webhook route")
     require(ops["handoff"]["hours"] in ("business", "always", "configured"), "Invalid handoff hours")
     require(ops["handoff"]["fallback"] == "callback_capture", "Unsafe handoff fallback")
     privacy = config["privacy"]
