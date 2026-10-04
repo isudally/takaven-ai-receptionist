@@ -132,6 +132,7 @@
   "operations": {
     "mode": "primary",
     "customer_binding": "trusted_destination_and_agent",
+    "request_destination_ref": "make:webhook:staff-email-and-sheet",
     "handoff": {
       "destination_ref": null,
       "hours": "business",
