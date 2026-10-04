@@ -1,16 +1,21 @@
-id,case,mode,languages,expected,blocking,status
-Q01,Approved facts and unknown price,screen,en/fr/ar,Exact approved facts; unknown price goes to human quote,true,NOT_RUN
-Q02,Availability and timezone,screen,en/fr/ar,Live authority plus hours and closures; explicit local date and timezone,true,NOT_RUN
-Q03,Book with correction and intent,screen,en/fr/ar,Latest corrected details confirmed; one committed booking with ID,true,NOT_RUN
-Q04,Reschedule and concurrent capacity,finalist,en/fr/ar,Atomic supported change; no overlap or cap breach; failed change preserves original,true,NOT_RUN
-Q05,Cancel with identity,screen,en/fr/ar,Approved identity and intent; correct cancellation receipt; no private disclosure,true,NOT_RUN
-Q06,Lookup and customer isolation,screen,en/fr/ar,Caller ID alone cannot disclose; unbound or mismatched customer denied,true,NOT_RUN
-Q07,Lead and contact correction,screen,en/fr/ar,Correct agreed contact; urgency separate from value; CRM record has receipt,true,NOT_RUN
-Q08,Human request and failed transfer,screen,en/fr/ar,Verified connection or truthful available message/callback; no fake escalation,true,NOT_RUN
-Q09,Interruption and switching,screen,en/fr/ar,Queued audio stops; unheard content not assumed; context and correction retained,true,NOT_RUN
-Q10,After-hours and disconnect,screen,en/fr/ar,Approved fallback and safe termination; no loss of unresolved action,true,NOT_RUN
-Q11,Replay and distinct intentions,finalist,en/fr/ar,Same operation replays result; changed payload conflicts; two intents get two IDs,true,NOT_RUN
-Q12,Delayed duplicate after cancellation,finalist,en/fr/ar,Old create replay cannot recreate cancelled appointment; history retained,true,NOT_RUN
-Q13,Timeout and retry termination,finalist,en/fr/ar,Unknown outcome reconciled before retry; finite attempts then excluded manual review,true,NOT_RUN
-Q14,Authentication and mock isolation,finalist,en/fr/ar,Invalid/replayed request denied; test auth and stub results cannot enter production,true,NOT_RUN
-Q15,Summary delivery and naturalness,finalist,en/fr/ar,Current action receipts match summary; delivery distinct from acknowledgement; fluent human telephone review,true,NOT_RUN
+id,case,mode,market,languages,expected,blocking,status
+Q01,Approved facts and unknown price,screen,MU,en/fr,Exact approved facts; unknown price goes to human quote,true,NOT_RUN
+Q02,Appointment request details and timezone,screen,MU,en/fr,Requested service/date/time window and timezone read back; staff receipt; no booking claim,true,NOT_RUN
+Q03,Book with correction and intent,screen,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
+Q04,Reschedule and concurrent capacity,finalist,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
+Q05,Cancel with identity,screen,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
+Q06,Lookup and customer isolation,screen,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
+Q07,Lead and contact correction,screen,AE,en/ar,Correct agreed contact; urgency separate from value; staff/CRM receipt,true,NOT_RUN
+Q08,Human request and failed transfer,screen,MU,en/fr,Verified connection or truthful available message/callback; no fake escalation,true,NOT_RUN
+Q09,Interruption and switching,screen,AE,en/ar,Queued audio stops; unheard content not assumed; context and correction retained,true,NOT_RUN
+Q10,After-hours and disconnect,screen,MU,en/fr,Approved fallback and safe termination; no loss of unresolved request,true,NOT_RUN
+Q11,Replay and distinct request intents,finalist,MU,en/fr,Same request operation replays its receipt; changed payload conflicts; distinct lead/request intents get distinct IDs,true,NOT_RUN
+Q12,Delayed duplicate after cancellation,finalist,MU,en/fr,Deferred until a customer booking authority exists,false,DEFERRED
+Q13,Timeout and retry termination,finalist,MU,en/fr,Unknown request-delivery outcome reconciled before retry; finite attempts then manual review,true,NOT_RUN
+Q14,Authentication and mock isolation,finalist,AE,en/ar,Invalid/replayed request denied; test auth and stub results cannot enter production,true,NOT_RUN
+Q15,Summary delivery and naturalness,finalist,AE,en/ar,Current receipts match summary; delivery distinct from acknowledgement; fluent human telephone review,true,NOT_RUN
+Q16,Language at call opening,screen,MU,en/fr,Supported language identified at opening and switching preserves context,true,NOT_RUN
+Q17,Vehicle sales qualification,screen,AE,en/ar,Vehicle sales or test-drive intent identified; required fields captured; staff receipt,true,NOT_RUN
+Q18,Appointment request correction and read-back,screen,MU,en/fr,Latest corrected date/time window and contact read back; staff receipt; no booking claim,true,NOT_RUN
+Q19,Unsupported-language fallback,screen,MU,en/fr,Offers EN/FR and human callback capture after two failed understanding attempts,true,NOT_RUN
+Q20,UAE appointment request correction and read-back,screen,AE,en/ar,Latest corrected date/time window and contact read back; staff receipt; no booking claim,true,NOT_RUN

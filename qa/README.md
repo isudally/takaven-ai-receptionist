@@ -1,6 +1,6 @@
 # Acceptance design and evidence
 
-[acceptance-cases.csv](acceptance-cases.csv) is a 15-case finalist catalogue, not executed results. The initial ~10-case screen in [benchmark plan](../docs/BENCHMARK_PLAN.md) remains lean. Select/translate cases into supported native tests only for qualified survivors; use targeted repeats for critical races/actions. Human telephone cases remain distinct from offline checks.
+[acceptance-cases.csv](acceptance-cases.csv) is a staged 20-case catalogue, not executed results. The initial ~5-case screen in [execution plan](../docs/EXECUTION_PLAN.md) remains lean. Select/translate cases into supported native tests only for qualified survivors; use targeted repeats for critical races/actions. Human telephone cases remain distinct from offline checks. Booking-lifecycle cases are explicitly DEFERRED until a customer-owned booking authority is selected.
 
 [run-record.example.json](run-record.example.json) shows a NOT_RUN evidence record. Record config hash, scenario version, provider/model/voice/region, telephone path, session references, action receipts, spoken result and reviewer. Missing evidence stays null and cannot pass. Do not commit real transcripts, recordings or personal information; keep access-controlled evidence references.
 
