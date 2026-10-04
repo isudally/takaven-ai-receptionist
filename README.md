@@ -7,11 +7,11 @@ Configure existing voice technology into reliable telephone receptionists for SM
 ## What is implemented
 
 - [Source review](docs/GITHUB_REUSE_REVIEW.md): 42 inspected files across six repositories, with adopt/skip decisions and [pinned provenance](docs/SOURCE_INVENTORY.json).
-- [Implementation architecture](docs/ARCHITECTURE.md): existing voice runtime and customer booking authority, supported integrations and human fallback.
+- [Implementation architecture](docs/ARCHITECTURE.md): existing voice runtime, appointment-request receipt, deferred booking authority and human fallback.
 - [Client configuration pack](config/README.md): separate fictional Mauritius EN/FR and UAE EN/AR draft profiles.
 - [Action contracts](spec/ACTION_CONTRACTS.md) and [conversation policy](spec/CONVERSATION_POLICY.md): committed results, identity, corrections, retries and escalation.
 - [Offline validator](scripts/validate_config.py): strict v1 configuration checks and deterministic hashes; no network or provider credentials.
-- [Acceptance catalogue](qa/README.md): 15 cases covering the source review's failure modes; every provider case is NOT_RUN.
+- [Acceptance catalogue](qa/README.md): 20 staged cases covering the source review's failure modes; booking-lifecycle cases are DEFERRED and provider cases remain NOT_RUN.
 
 No external repository code, prompts, workflow files or migrations were imported. Restricted repositories informed independently written requirements. Native vendor tooling will be used where it fits the qualified stack.
 
@@ -24,11 +24,11 @@ python scripts/validate_config.py
 python scripts/validate_config.py --self-test
 ```
 
-Both example profiles validate as drafts. The self-test rejects 20 unsafe/invalid variants and checks stable hashes. **Validation does not establish deployment readiness or receptionist performance.**
+Both example profiles validate as drafts. The self-test rejects 23 unsafe/invalid variants and checks stable hashes. **Validation does not establish deployment readiness or receptionist performance.**
 
 ## Next gate
 
-Follow [Execution rules](docs/EXECUTION_RULES.md): main Codex orchestrates two bounded executors, a Drift Guard and a GitHub Reuse Scout. Checkpoints prevent scope expansion and duplicated custom work.
+Follow the owner-review [execution plan](docs/EXECUTION_PLAN.md) and [Execution rules](docs/EXECUTION_RULES.md): main Codex orchestrates two bounded executors, a Drift Guard and a GitHub Reuse Scout. Checkpoints prevent scope expansion and duplicated custom work.
 
 The [first desk recommendation](reports/PHASE_0_RECOMMENDATION.md) prioritises resolving Retell's managed route, with ElevenAgents next. [Provider qualification](docs/PROVIDER_QUALIFICATION.md) records verified identities/prices and mandatory unknowns. Resolve those before proposing a separately authorised lean benchmark. Do not build five adapters, a voice engine, a booking database or a dashboard.
 
@@ -52,6 +52,6 @@ The [first desk recommendation](reports/PHASE_0_RECOMMENDATION.md) prioritises r
 
 ## Repository
 
-Private repository: [isudally/takaven-ai-receptionist](https://github.com/isudally/takaven-ai-receptionist). Use its published history for ongoing work. Earlier delivered bundle/archive represents the original documentation baseline and is superseded by this rebuild; do not force-push it over GitHub.
+Temporary public review repository: [isudally/takaven-ai-receptionist](https://github.com/isudally/takaven-ai-receptionist). Return it to private before commercial material or further implementation work is published. Use its published history for ongoing work. Earlier delivered bundle/archive represents the original documentation baseline and is superseded by this rebuild; do not force-push it over GitHub.
 
 Latest explicit user instructions and [decision log](docs/DECISIONS.md) govern work. Use the qualification register to distinguish verified public facts from unresolved access, integration and performance. A repository demonstration is not launch evidence.

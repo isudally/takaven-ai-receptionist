@@ -4,7 +4,7 @@
 
 The user authorised source-level review of related repositories and an independent rebuild using their useful patterns. That work produced documentation, draft client configuration, action/conversation contracts, acceptance design and offline lint. No live provider testing, provisioning or paid activity is authorised by that request.
 
-The next gate is Phase 0 public-document provider qualification. Do not interpret this file as permission to execute later chargeable stages.
+The first Phase 0 desk pass is complete. The next gate is the owner-approved execution plan and offline provider mapping. Do not interpret this file as permission to execute later chargeable stages.
 
 Read `README.md`, `docs/STATUS.md`, `docs/DECISIONS.md` and `docs/PHASE_0_BRIEF.md` before work. Inspect existing files before changing them. Preserve useful work.
 
@@ -12,7 +12,7 @@ Read `README.md`, `docs/STATUS.md`, `docs/DECISIONS.md` and `docs/PHASE_0_BRIEF.
 
 - Buy, configure and integrate existing technology. No proprietary voice platform.
 - Do not build speech recognition, TTS, LLMs, telephony, CRM, calendars, analytics platforms, dashboards or a generic agent framework.
-- Offline configuration lint is authorised and implemented. No provider adapters, benchmark execution, provider API calls, generated audio or calls during Phase 0.
+- Offline configuration lint and provider-neutral mapping are authorised. No provider adapters, provider API calls, generated audio, number purchase, paid activity or live calls before the owner approves the execution plan and applicable test gate.
 - Read docs/ARCHITECTURE.md, docs/GITHUB_REUSE_REVIEW.md and spec/ACTION_CONTRACTS.md before changing the rebuilt pack. Do not import restricted source, prompts, workflows or migrations.
 - Do not buy numbers, activate paid plans, create paid resources or consume provider test credits without explicit authorisation.
 - No live customer data in research or benchmarking. Later demos use fictional information.

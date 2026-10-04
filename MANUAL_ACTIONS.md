@@ -5,15 +5,15 @@ No credentials are required for public-document Phase 0. Do not request all prov
 | Timing | Action | Owner | Status |
 |---|---|---|---|
 | Repository setup | Complete secure GitHub browser sign-in | Ismaël | COMPLETE |
-| Repository setup | Create private `isudally/takaven-ai-receptionist` through authorised browser fallback | Codex | COMPLETE |
+| Repository setup | Keep `isudally/takaven-ai-receptionist` public only for the temporary external review, then return it to private | Codex / Ismaël | PENDING REVIEW COMPLETION |
 | Repository setup | Publish prepared documentation through signed-in browser | Codex | COMPLETE; GitHub has separate publication commits from local bundle |
 | Source review/rebuild | Review six repositories and rebuild an independent offline configuration pack | Codex | COMPLETE; source inventory and validation report recorded |
 | Before connector-based execution | Grant this repository access through existing GitHub app connection only if a later operation requires it | Ismaël, only if required | OPTIONAL DEPENDENCY; authorised browser publication works |
 | Orchestration | Main agent delegates bounded work; Drift Guard and Reuse Scout check scope/reuse | Codex | ACTIVE; assignment/pre-merge guard checks completed |
 | Product gate | First public-document Phase 0 desk qualification pass | Codex | COMPLETE; all full stacks unresolved; no credentials needed |
-| Next task | Resolve Retell mandatory documentation gaps then one carrier/booking route | Codex; account owner only when necessary | PENDING; no paid testing authorised |
+| Next task | Apply the owner-approved execution plan: offline Retell mapping, then route/access decision | Codex; account owner only when necessary | PENDING; no paid testing authorised |
 | After Phase 0 | Resolve carrier/account-specific unknowns for actual MU/UAE phone paths | Ismaël plus relevant account/carrier owner | NOT REQUESTED |
-| Before chargeable testing | Agree exact survivors, session/call cap and spending ceiling | Ismaël | NOT REQUESTED |
+| Before chargeable testing | Approve Retell smoke scenarios, route, reviewer coverage and spending ceiling | Ismaël | NOT REQUESTED |
 | Before survivor testing | Create/activate only required accounts; complete any vendor/carrier verification | Account owner | NOT REQUESTED |
 | Before API testing | Supply credentials through secure environment settings, never chat or Git | Account owner | NOT REQUESTED |
 | Finalist review | Arrange fluent EN/FR/AR reviewers and real-phone access | Ismaël / reviewers | NOT REQUESTED |
