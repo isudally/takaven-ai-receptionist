@@ -20,8 +20,8 @@ Commands: `python scripts/validate_config.py`, `python scripts/validate_config.p
 
 ## Draft hashes
 
-- Mauritius: `27ced26e933769960f30d36321d807845add5fe93281ec5a0d59e4fa350fe18a`
-- UAE: `9b27dc4b1d28472546cc221257491b47bed68f2aef1409cde5b79c0ba5daba65`
+- Mauritius: `65a08a75bb9ed6220ce8cd5388396b94e5698b8c843e0181df7f11a5304cac48`
+- UAE: `bf435b5165688ffcefb7c7883aa13ab0d0ca1a0cb8fe69f2ddc161d926cc0a23`
 
 Both report `deployment_ready: false`. Each has 9 unresolved first-demo prerequisites: provider, agent, identity policy, rollback, handoff destination, retention, two voice references and fact approval. The booking authority is reported separately as one deferred prerequisite.
 
