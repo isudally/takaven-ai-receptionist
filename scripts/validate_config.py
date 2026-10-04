@@ -21,12 +21,18 @@ SHAPE = {
     },
     "facts": {
         "approved": "boolean",
+        "address": "string",
+        "faqs": [{"id": "string", "text": "localized"}],
         "services": [{
             "id": "string", "name": "string", "duration_minutes": "integer",
             "price_amount": NULL_STRING, "price_basis": "string", "tax_wording": "string"
         }],
         "hours": [{"day": "string", "open": "string", "close": "string"}],
         "closures": ["string"]
+    },
+    "routing": {
+        "intents": [{"id": "string", "qualification_fields": ["string"], "action": "string"}],
+        "escalation": [{"id": "string", "trigger": "string", "action": "string"}]
     },
     "integration": {k: NULL_STRING for k in ("provider", "agent_ref", "booking_authority")},
     "safety": {
@@ -38,7 +44,8 @@ SHAPE = {
     },
     "operations": {
         "mode": "string", "customer_binding": "string",
-        "human_fallback_ref": NULL_STRING, "rollback_ref": NULL_STRING
+        "handoff": {"destination_ref": NULL_STRING, "hours": "string", "fallback": "string"},
+        "rollback_ref": NULL_STRING
     },
     "privacy": {
         "recording_enabled": "boolean", "messaging_requires_consent": "boolean",
@@ -78,6 +85,11 @@ def check_shape(value, shape, path="config"):
         for key, item in value.items():
             check_shape(key, "string", path)
             check_shape(item, NULL_STRING, f"{path}.{key}")
+    elif shape == "localized":
+        require(type(value) is dict, f"{path}: expected localized object")
+        for key, item in value.items():
+            check_shape(key, "string", path)
+            check_shape(item, "string", f"{path}.{key}")
     else:
         allowed = shape if isinstance(shape, tuple) else (shape,)
         require(any(type(value) is TYPES[t] for t in allowed), f"{path}: invalid type")
@@ -102,6 +114,13 @@ def lint(config):
     require(set(conv["voice_refs"]) == languages, "Voice references must match languages")
     require(conv["ai_disclosure"], "AI disclosure is required")
     facts = config["facts"]
+    require(facts["address"].strip(), "Address is required")
+    faq_ids = set()
+    for faq in facts["faqs"]:
+        require(faq["id"] not in faq_ids, "Duplicate FAQ ID")
+        faq_ids.add(faq["id"])
+        require(set(faq["text"]) == languages, "FAQ languages must match market")
+        require(all(text.strip() for text in faq["text"].values()), "FAQ text cannot be blank")
     require(bool(facts["services"]), "Service catalogue is empty")
     ids = set()
     for service in facts["services"]:
@@ -119,6 +138,19 @@ def lint(config):
             require(price.is_finite() and price >= 0, "Price must be finite and nonnegative")
         require(not facts["approved"] or service["price_basis"] != "fixed_demo",
                 "Demo prices cannot be marked client-approved")
+    routing = config["routing"]
+    intent_ids = set()
+    for intent in routing["intents"]:
+        require(intent["id"] not in intent_ids, "Duplicate intent ID")
+        intent_ids.add(intent["id"])
+        require(intent["qualification_fields"], "Intent qualification fields are empty")
+        require(len(intent["qualification_fields"]) == len(set(intent["qualification_fields"])), "Duplicate intent qualification field")
+        require(intent["action"] in ("create_lead", "capture_appointment_request", "escalate_to_human"), "Invalid intent action")
+    escalation_ids = set()
+    for rule in routing["escalation"]:
+        require(rule["id"] not in escalation_ids, "Duplicate escalation ID")
+        escalation_ids.add(rule["id"])
+        require(rule["action"] in ("human", "callback_capture"), "Invalid escalation action")
     days = set()
     require(bool(facts["hours"]), "Opening hours are empty")
     for window in facts["hours"]:
@@ -138,6 +170,8 @@ def lint(config):
     ops = config["operations"]
     require(ops["mode"] in ("primary", "overflow", "after_hours"), "Invalid reception mode")
     require(ops["customer_binding"] == "trusted_destination_and_agent", "Unsafe customer binding")
+    require(ops["handoff"]["hours"] in ("business", "always", "configured"), "Invalid handoff hours")
+    require(ops["handoff"]["fallback"] == "callback_capture", "Unsafe handoff fallback")
     privacy = config["privacy"]
     require(not privacy["recording_enabled"], "Draft pack does not authorise recordings")
     require(privacy["messaging_requires_consent"], "Messaging consent is required")
@@ -145,18 +179,25 @@ def lint(config):
             "Invalid retention; value requires client approval before deployment")
     prerequisites = []
     for section, fields in {
-        "integration": ("provider", "agent_ref", "booking_authority"),
+        "integration": ("provider", "agent_ref"),
         "safety": ("identity_policy_ref",),
-        "operations": ("human_fallback_ref", "rollback_ref"),
+        "operations": ("rollback_ref", "handoff.destination_ref"),
         "privacy": ("retention_days",)
     }.items():
-        prerequisites.extend(f"{section}.{field}" for field in fields if config[section][field] is None)
+        for field in fields:
+            value = config[section]
+            for part in field.split("."):
+                value = value[part]
+            if value is None:
+                prerequisites.append(f"{section}.{field}")
     prerequisites.extend(f"conversation.voice_refs.{lang}" for lang, ref in conv["voice_refs"].items() if ref is None)
     if not facts["approved"]:
         prerequisites.append("facts.client_approval")
     raw = json.dumps(config, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
     return {"status": "VALID_DRAFT", "config_sha256": hashlib.sha256(raw).hexdigest(),
-            "unresolved_prerequisites": prerequisites, "deployment_ready": False}
+            "unresolved_prerequisites": prerequisites,
+            "deferred_prerequisites": ["integration.booking_authority"],
+            "deployment_ready": False}
 
 
 def read_config(path):
@@ -194,6 +235,9 @@ def self_test():
         ("recording", lambda c: c["privacy"].update(recording_enabled=True)),
         ("no message consent", lambda c: c["privacy"].update(messaging_requires_consent=False)),
         ("approved demo facts", lambda c: c["facts"].update(approved=True)),
+        ("FAQ language mismatch", lambda c: c["facts"]["faqs"][0].update(text={"en": "Only English"})),
+        ("empty intent fields", lambda c: c["routing"]["intents"][0].update(qualification_fields=[])),
+        ("unsafe handoff fallback", lambda c: c["operations"]["handoff"].update(fallback="pretend_connected")),
     ]
     for label, change in cases:
         candidate = copy.deepcopy(base)
