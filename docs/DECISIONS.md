@@ -22,12 +22,16 @@ Baseline recorded: 2026-10-04. Owner: Ismaël. Executor selected in prior discus
 | D16 | Truthful outcomes require authoritative committed receipts | Reject stub confirmation, fake escalation and unverified success after timeout |
 | D17 | Keep the implementation a customer configuration/integration pack | Native voice runtime and existing booking/CRM authority; no custom platform or booking database |
 | D18 | Preserve operation history; atomically protect both create and reschedule | Safe replay after cancellation, outcome reconciliation and bounded terminal retry states |
+| D19 | 2026-10-04: main Codex agent orchestrates bounded sub-agents | Fixed scope, one active gate, minimal handoffs, separate drafts, one review and explicit stopping rules in EXECUTION_RULES.md |
+| D20 | 2026-10-04: dedicated read-only Drift Guard | Checks assignment, merge and phase transitions; CLEAR/FLAG/STOP verdict; main agent resolves STOP before proceeding |
+| D21 | 2026-10-04: bounded desk pass completed; no final engine selected | All complete stacks unresolved; resolve Retell first, ElevenAgents next; no automatic exclusion for small supported business-integration glue |
+| D22 | 2026-10-04: dedicated GitHub Reuse Scout | Checks close existing implementations before custom code; flags overlap, provenance, licence and gaps without changing scope or copying restricted code |
 
 ## Superseded material
 
 The attached original blueprint is preserved in `reference/ORIGINAL_BLUEPRINT.txt`. Its two-provider contest, mandatory 80-scenario starting suite, three initial demos and feature claims are historical. Later discussion replaces these with five-candidate desk qualification, a lean staged benchmark and one automotive demo. The earlier large execution prompt requiring five adapters and roughly 60 tests per provider is also superseded.
 
-Names such as `GPT-Live-1`, `Gemini 3.8 Live`, `ElevenAgents` and `Reception.ai` were supplied in prior discussion. They are not verified identifiers in this repository. ElevenAgents and Reception.ai must not be assumed interchangeable.
+Names such as `GPT-Live-1`, `Gemini 3.8 Live`, `ElevenAgents` and `Reception.ai` were supplied in prior discussion. The 2026-10-04 desk pass verified `gpt-live-1`, `gemini-3.8-live` and ElevenAgents in official documentation. Full stack/market suitability remains unresolved. Reception.ai and ElevenAgents must not be assumed interchangeable.
 
 ## Open decisions
 

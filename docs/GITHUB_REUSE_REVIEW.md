@@ -90,3 +90,15 @@ The inspected HTTP and WebSocket handlers show no Twilio signature/stream-origin
 The four inspected MIT licences permit reuse subject to their notices and other applicable obligations; we imported none of their code. The restaurant source is published without a reuse grant; KAA's inspected root/README provides none. No restricted code, prompts, migrations or workflow files are included in TAKAVEN. Our configuration, contracts, lint and QA cases were independently authored from our requirements. If a dependency or source fragment is adopted later, record exact version, licence and attribution first.
 
 Static source review does not establish security, uptime, commercial suitability, vendor terms or language quality. Existing test files and assertion counts are authors' evidence, not tests we reran. The next product decision still requires official provider qualification and later authorised telephone testing.
+
+## Reuse Scout checkpoint — 2026-10-04
+
+The dedicated read-only scout made two focused queries and opened three strong matches. These are new discovery leads, separate from the completed 42-file source audit. No code was downloaded, executed or adopted. Licence grants remain UNKNOWN where a full licence was not retrieved.
+
+| Asset | Useful overlap | Action and limits |
+|---|---|---|
+| [elevenlabs/plugin](https://github.com/elevenlabs/plugin), [agent guide](https://github.com/elevenlabs/plugin/blob/main/skills/general/agents/SKILL.md) | Native scheduling/CRM and human-transfer configuration guidance | Resolve exact supported booking lifecycle and failure handling during ElevenAgents qualification; guide metadata is not a verified licence grant |
+| [twilio/twilio-agent-connect-python](https://github.com/twilio/twilio-agent-connect-python) | Existing GPT-Live telephone/channel integration SDK | Verify supported package/model pairing and licence before proposing custom bridge work; not a complete receptionist |
+| [RetellAI/retell-typescript-sdk](https://github.com/RetellAI/retell-typescript-sdk) | Existing typed vendor API client and provisioning operations | Prefer supported SDK if selected; verify version/licence first; no new client needed now |
+
+Scout disposition: FLAG useful qualification/reuse leads; CLEAR for desk work. Native tools do not prove atomic booking, replay protection, local routing or bilingual quality. Keep all complete provider stacks UNRESOLVED. Future checks are triggered by a concrete custom-code proposal, not repeated broad discovery.
