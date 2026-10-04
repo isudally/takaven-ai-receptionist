@@ -1,7 +1,7 @@
-# Reports
+# Evidence reports
 
-No research or benchmark results exist yet.
+[OFFLINE_VALIDATION.md](OFFLINE_VALIDATION.md) records configuration checks actually run during the 2026-10-04 rebuild.
 
-Phase 0 will create `PHASE_0_RECOMMENDATION.md` and update the qualification register with official-source evidence. Do not create a dummy winner, fabricated scorecard or placeholder text that appears to be an actual result.
+No provider performance, telephone quality, cost benchmark or client acceptance results exist. [QA catalogue](../qa/README.md) is design only.
 
-Later authorised testing may add sanitised failure, telephone, latency, cost and human-review reports plus a final recommendation. Store raw recordings/transcripts outside Git; link private retained evidence by anonymous ID. Preserve configuration versions and actual sample counts.
+Future reports must include date, exact product/plan/region, source URLs, configuration/scenario hashes, action receipts, sample count, reviewer where needed, limitations and PASS/FAIL/BLOCKED/NOT_RUN. Store real caller data and recordings only in approved customer systems; Git holds redacted evidence references.
