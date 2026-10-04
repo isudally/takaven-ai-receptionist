@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "run_id": null,
+  "status": "NOT_RUN",
+  "scenario_id": "Q04",
+  "scenario_version": "1",
+  "config_sha256": null,
+  "repository_commit": null,
+  "provider": {
+    "product": null,
+    "model": null,
+    "voice": null,
+    "region": null
+  },
+  "language": "fr",
+  "telephone_path": null,
+  "session_ref": null,
+  "expected": "Authoritative atomic reschedule; original booking preserved on failed replacement",
+  "tool_arguments": null,
+  "action_receipt": null,
+  "spoken_outcome": null,
+  "notification_delivery": null,
+  "staff_acknowledgement": null,
+  "reviewer": null,
+  "actual": null,
+  "verdict": "NOT_RUN",
+  "limitations": "Example only; no provider test or call was executed."
+}
