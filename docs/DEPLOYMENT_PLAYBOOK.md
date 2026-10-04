@@ -6,7 +6,7 @@ Target: complete client configuration within approximately one business day afte
 
 Collect business identity, authorised approver, selected market/languages, reception mode, hours/timezone/holidays, services/prices/policies, approved FAQs, restrictions, qualification/VIP rules, escalation contacts and callback expectations. Record spelling/pronunciation preferences.
 
-Confirm customer-owned provider/carrier account, supported routing, delegated access, staff/queue notification destination and approved data/disclosure/recording practices. A calendar/CRM and booking authority are optional later integrations; they are not required for the first appointment-request demo. Keep secrets outside this repository.
+Confirm customer-owned provider/carrier account, supported routing, delegated access, staff/queue notification destination and approved data/disclosure/recording practices. For the first demo, map the Retell custom function to a Make webhook that sends one staff email, upserts one Google Sheet row and returns a receipt ID through Make's webhook response. Verify Retell's signed request before accepting it; keep the endpoint and credentials outside this repository. A calendar/CRM and booking authority are optional later integrations; they are not required for the first appointment-request demo. Keep secrets outside this repository.
 
 ## Configure
 
@@ -18,7 +18,7 @@ Before changing remote settings: snapshot the prior version; name exact customer
 
 ## Validate
 
-Client approves factual content and business rules. Run the client-specific acceptance set against safe test records, then the actual phone route. Verify action results and staff notifications, after-hours behaviour, failed transfer fallback and rollback. All launch blockers must be resolved.
+Client approves factual content and business rules. For Gate D, run the client-specific acceptance set as Retell web calls against fictional data; verify action results, Make receipt IDs, staff notifications, deduplication, after-hours behaviour and callback fallback. Test an actual phone route and warm transfer only in Gate E after separate carrier and destination approval. All launch blockers must be resolved.
 
 ## Handover and launch
 
