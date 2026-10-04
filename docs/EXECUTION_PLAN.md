@@ -39,7 +39,7 @@ Run the smallest set needed to decide whether the provisional mapping is viable:
 5b. UAE: unsupported-language fallback.
 5c. MU or UAE: failed handoff through callback capture; a web call must not claim a transfer occurred.
 
-Record a separate verdict for each scenario. Record provider, model, voice, route, language, config hash, exact action arguments, the Make receipt ID, staff email/Sheet delivery, spoken result, reviewer and cost. The first-demo duplicate key is Retell `call_id` plus intent; Make upserts the Sheet row on that key, so a replay cannot create a second row. A transcript alone cannot pass an action case.
+Record a separate verdict for each scenario. Record provider, model, voice, route, language, config hash, exact action arguments, the Make receipt ID, staff email/Sheet delivery, spoken result, reviewer and cost. Gate B must define and verify signature checking, replay serialization, stored receipt/payload comparison and separately deduplicated email delivery. The first demo permits at most one committed request per intent per call; within that limit, the duplicate key is Retell `call_id` plus intent and Gate D must prove that a replay creates no second Sheet row or email. A second same-intent request routes to human follow-up. A transcript alone cannot pass an action case.
 
 ## Stop conditions
 
