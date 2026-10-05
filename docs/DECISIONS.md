@@ -30,6 +30,7 @@ Baseline recorded: 2026-10-04. Owner: Ismaël. Executor selected in prior discus
 | D24 | 2026-10-04: Retell is the provisional first mapping target | Do not reopen provider comparison unless Retell fails a demonstrated mandatory gate. Gate B is offline mapping only; no provider spend, account activation or live calls without separate approval |
 | D25 | 2026-10-04: market route is staged | Gate D uses Retell web calls/test paths with fictional data; Mauritius real telephone routing moves to Gate E after carrier verification; UAE remains a labelled browser/test route until a suitable customer-owned carrier path is verified |
 | D26 | 2026-10-04: every future prompt requires orchestrated preflight before execution | Main agent reviews the supplied plan against the current gate, delegates bounded independent checks, preserves approvals and unknowns, invokes Drift Guard at checkpoints, and stops on blockers rather than executing blindly |
+| D27 | 2026-10-05: Gate B.1 uses Make-native authenticated ingress and a minimal receipt ledger | Retell custom functions send a static `x-make-apikey` header to a Make API-key-authenticated webhook; Make Process data in order and Data Store unique-key duplicate rejection provide the bounded first-demo ledger. Retell HMAC remains optional defense-in-depth. The ledger is not a customer, CRM, booking or general-purpose database; runtime remains NOT_RUN |
 
 ## Superseded material
 
@@ -42,8 +43,8 @@ Names such as `GPT-Live-1`, `Gemini 3.8 Live`, `ElevenAgents` and `Reception.ai`
 - Exact available product/model/plan for each candidate; no silent substitutions.
 - Complete supported telephone route for each target market and customer-number setup.
 - Accounts, trial access, reviewer availability, spend cap and execution start date.
-- Gate 0A alignment is complete; Gate B offline Retell mapping is the next project gate and has not started.
-- The Retell-to-Make receipt path, data handling, reviewer availability and any live-test ceiling remain Gate B or later unknowns/approvals.
+- Gate 0A alignment is complete; Gate B.1 architecture correction is complete at design level. Runtime testing and Gate C/D remain unstarted.
+- The corrected Retell-to-Make receipt path, data handling, reviewer availability and any live-test ceiling remain later unknowns/approvals.
 - Final benchmark count, tied to qualified survivors and available access.
 - Launch prices, support boundaries and optional care scope.
 - Data handling, recording/AI disclosure and contractual requirements for the specific deployment.

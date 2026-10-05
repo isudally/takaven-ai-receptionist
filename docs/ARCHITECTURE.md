@@ -1,6 +1,6 @@
 # TAKAVEN implementation architecture
 
-Decision date: 2026-10-04. The source review informs this design; no provider or production integration has been selected.
+Decision date: 2026-10-05. Retell remains the provisional mapping target; no provider or production integration has been selected. Gate B.1 mapping is recorded in [RETELL_GATE_B_MAPPING.md](RETELL_GATE_B_MAPPING.md) and resolves the prior route blocker at design level using Make API-key ingress and a minimal Make Data Store ledger.
 
 ## Product boundary
 
@@ -29,7 +29,7 @@ The [conversation policy](../spec/CONVERSATION_POLICY.md) supplies common semant
 
 [Action contracts](../spec/ACTION_CONTRACTS.md) separate an appointment request from a committed booking. The first demo captures the requested service, date/time window, caller and vehicle details, reads them back and records a staff/queue receipt. It does not claim availability or a booked slot. The existing scheduling authority and its availability/capacity controls are deferred until a customer-owned booking system is selected and tested.
 
-The first-demo receipt path is deliberately small: Retell custom function → publicly reachable Make webhook → staff email plus one Google Sheet row → Make webhook-response receipt ID. Retell's signed `X-Retell-Signature` request must be verified by the mapped endpoint before accepting the action; the endpoint and credentials stay outside Git. Gate B must prove signature verification, replay serialization, stored receipt/payload comparison and separately deduplicated email delivery before this path is treated as authoritative. To avoid merging two intentions, the first demo permits at most one committed request per intent per call; a second same-intent request routes to human follow-up. Within that bounded scope, the Make upsert key is Retell `call_id` plus intent. Gate D must prove that an exact replay returns the original receipt without a second Sheet row or email, while a changed payload is flagged for reconciliation. No request database or custom server is required.
+The corrected first-demo receipt path is Retell custom function → HTTPS Make webhook authenticated with static `x-make-apikey` → minimal Make Data Store receipt/idempotency ledger → staff email plus one Google Sheet row → Make webhook-response receipt ID. The ledger uses trusted Retell `call_id` plus intent as its unique key, creates `PROCESSING` before downstream side effects, rejects changed payloads, returns original receipts for exact committed replays, and leaves uncertain work for reconciliation. Retell `X-Retell-Signature` remains optional defense-in-depth where raw-body verification is available. The Data Store is not a customer, CRM, booking or general-purpose database; no custom server is being added.
 
 For the first demo, an unknown request-delivery outcome is reconciled against the staff/queue receipt before retry. Later, if a customer booking authority is added, classify a scheduling timeout as unknown until reconciliation establishes whether the operation committed. Never cancel the old appointment before a replacement is committed through an atomic supported change.
 

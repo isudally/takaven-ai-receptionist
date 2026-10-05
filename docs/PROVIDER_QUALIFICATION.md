@@ -1,6 +1,6 @@
 # Provider qualification register
 
-Checked 2026-10-04. **Bounded first desk pass complete; every full stack UNRESOLVED.** PASS means a specific documented capability, not tested performance. No account/call/audio/API execution or spend. EN/FR/AR telephone quality, customer carrier paths and safe booking have not been demonstrated.
+Checked 2026-10-05. **Gate B.1 architecture correction passes at design level; runtime remains NOT_RUN.** PASS means a specific documented capability, not tested performance. No account/call/audio/API execution or spend. EN/FR/AR telephone quality, customer carrier paths and safe booking have not been demonstrated. See [Gate B Retell mapping](RETELL_GATE_B_MAPPING.md).
 
 ## Gate matrix
 
@@ -8,7 +8,7 @@ Checked 2026-10-04. **Bounded first desk pass complete; every full stack UNRESOL
 |---|---|---|---|---|---|---|---|---|---|
 | GPT-Live 1 `gpt-live-1` + Twilio Agent Connect | PASS [O1,O2] | UNKNOWN | UNKNOWN | UNKNOWN | Model documented; partner UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | UNRESOLVED |
 | Gemini 3.8 Live `gemini-3.8-live` + Voximplant Gemini Live API Client | PASS model [G1]; pairing UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | Model documented; partner UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | UNRESOLVED |
-| Retell AI Voice Agents web calls + proposed Make receipt route | PASS [R1,R2] | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN in bounded pass | UNKNOWN | Web-call callback capture and Make receipt/security UNKNOWN; telephone handoff deferred | Partial evidence; ownership / total cost UNKNOWN | PROVISIONAL MAPPING TARGET; Gate B unresolved |
+| Retell AI Voice Agents web calls + corrected Make API-key/Data Store receipt route | PASS [R1,R2] | UNKNOWN | UNKNOWN | MAPPED; quality NOT_RUN | MAPPED; runtime NOT_RUN | UNKNOWN | Web-call callback capture and receipt delivery NOT_RUN; telephone handoff deferred | Partial evidence; ownership / total cost UNKNOWN | PROVISIONAL TARGET; B.1 DESIGN PASS |
 | ElevenLabs ElevenAgents + native Twilio or supported SIP + existing booking authority | PASS [E1] | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN pending exact setting evidence | UNKNOWN | UNKNOWN | Partial platform support; pricing / handover UNKNOWN | UNRESOLVED |
 | Synthflow AI Voice Agents + approved SIP/native telephony + Cal.com | PASS [S1,S2] | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | Booking documented; change/cancel UNKNOWN [S4] | Warm-transfer features documented; exact route UNKNOWN [S3] | CSV documented; full ownership / total cost UNKNOWN | UNRESOLVED; commercial concern |
 
@@ -18,7 +18,7 @@ Checked 2026-10-04. **Bounded first desk pass complete; every full stack UNRESOL
 
 **Google:** exact model verified in pricing; official Live overview names Voximplant for inbound/outbound calls. Its product page advertises native connectivity [G3], but exact 3.8 compatibility and complete supported deployment remain UNKNOWN. Function calling alone does not establish authorised calendar mutations or handover.
 
-**Retell:** Gate D is a web-call path; Retell's `create-web-call` endpoint avoids number provisioning during the first smoke test. The purchased-number path is currently US/Canada only, so it is not a Mauritius telephone route. Elastic SIP documents own-number inbound/outbound operation and transfers conditional on carrier capabilities; Mauritius carrier/KYC/SIP setup and warm transfer therefore remain Gate E work. Retell custom functions require a publicly reachable HTTPS endpoint and signed `X-Retell-Signature` verification. The proposed first-demo endpoint is a Make webhook returning a receipt ID after staff email plus one Google Sheet upsert. Full booking lifecycle, fluent language quality, delegation, export/retention, local account acceptance and complete MU/UAE routes are UNKNOWN.
+**Retell:** Gate D remains a web-call path; Retell's web-call documentation supports browser testing without number provisioning. The purchased-number path is currently US/Canada only in the existing desk evidence, so it is not a Mauritius telephone route. Retell custom functions support static request headers, and Make documents API-key-authenticated Custom Webhooks with `x-make-apikey`, ordered webhook processing and Data Store unique-key duplicate rejection. The corrected first-demo route passes at design level using a minimal Make Data Store receipt/idempotency ledger; runtime authentication, receipt delivery, side-effect and reconciliation tests remain NOT_RUN. Full booking lifecycle, fluent language quality, delegation, export/retention, local account acceptance and complete MU/UAE routes remain UNKNOWN.
 
 **ElevenLabs:** current documented product is ElevenAgents. Native Twilio and SIP connections are documented at overview level. Navigation/calendar listings are discovery leads, not proven complete integrations. Exact plan/pricing, language switching, transfer fallback, action authority and ownership remain UNKNOWN. Reception.ai relationship/capabilities are not established by this pass; homepage retrieval failed.
 
