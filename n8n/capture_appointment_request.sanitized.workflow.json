@@ -1,0 +1,147 @@
+{
+  "name": "TAKAVEN Receptionist v0.1 - Capture Appointment Request",
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "<BUSINESS_TIMEZONE>"
+  },
+  "meta": {
+    "template_status": "sanitized_baseline",
+    "source_shape": "current four-node TAKAVEN n8n workflow",
+    "live_values_removed": true,
+    "owner_must_configure": [
+      "N8N_WEBHOOK_PATH",
+      "GOOGLE_SHEET_DOCUMENT_ID",
+      "GOOGLE_SHEETS_CREDENTIAL",
+      "AUTH_HEADER_NAME",
+      "AUTH_HEADER_VALUE"
+    ]
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "<N8N_WEBHOOK_PATH>",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "<RETELL_WEBHOOK_NODE_ID>",
+      "name": "Retell Function - Capture Appointment Request",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "<RETELL_WEBHOOK_ID>"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "<GOOGLE_SHEET_DOCUMENT_ID>"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Sheet1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Caller Name": "={{ $json.args?.caller_name || $json.caller_name || '' }}",
+            "Caller Contact": "={{ ($json.args?.caller_contact || $json.caller_contact) ? \"'\" + ($json.args?.caller_contact || $json.caller_contact) : '' }}",
+            "Vehicle": "={{ $json.args?.vehicle || $json.vehicle || '' }}",
+            "Service": "={{ $json.args?.service || $json.service || '' }}",
+            "Preferred Date": "={{ $json.args?.preferred_date || $json.preferred_date || '' }}",
+            "Preferred Time Window": "={{ $json.args?.preferred_time_window || $json.preferred_time_window || '' }}",
+            "Call Reference": "={{ $json.call?.call_id || $json.call_id || $execution.id }}",
+            "Status": "RECEIVED"
+          },
+          "matchingColumns": []
+        },
+        "options": {
+          "valueInputMode": "USER_ENTERED"
+        }
+      },
+      "id": "<SHEETS_NODE_ID>",
+      "name": "Save Appointment Request",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        260,
+        0
+      ],
+      "onError": "continueErrorOutput",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "<GOOGLE_SHEETS_CREDENTIAL_ID>",
+          "name": "<GOOGLE_SHEETS_CREDENTIAL_NAME>"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"RECEIVED\",\"message\":\"Your appointment request has been sent to the team for confirmation.\"}",
+        "options": {}
+      },
+      "id": "<SUCCESS_RESPONSE_NODE_ID>",
+      "name": "Respond - Request Received",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        520,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\":\"FAILED\",\"message\":\"Sorry, I could not send your appointment request right now. Please try again shortly.\"}",
+        "options": {}
+      },
+      "id": "<FAILURE_RESPONSE_NODE_ID>",
+      "name": "Respond - Request Failed",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        520,
+        80
+      ]
+    }
+  ],
+  "connections": {
+    "Retell Function - Capture Appointment Request": {
+      "main": [
+        [
+          {
+            "node": "Save Appointment Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Appointment Request": {
+      "main": [
+        [
+          {
+            "node": "Respond - Request Received",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Request Failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

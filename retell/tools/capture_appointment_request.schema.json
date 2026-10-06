@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TAKAVEN capture appointment request",
+  "description": "TAKAVEN-owned Retell custom-function contract for a fictional automotive appointment request. It never creates a booking.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "caller_name": {
+      "type": "string",
+      "description": "Caller-confirmed name. Use the latest correction."
+    },
+    "caller_contact": {
+      "type": "string",
+      "description": "Caller-confirmed phone number or email."
+    },
+    "vehicle": {
+      "type": "string",
+      "description": "Caller-confirmed vehicle make and model."
+    },
+    "service": {
+      "type": "string",
+      "description": "Automotive service requested by the caller."
+    },
+    "preferred_date": {
+      "type": "string",
+      "description": "Preferred service date stated by the caller."
+    },
+    "preferred_time_window": {
+      "type": "string",
+      "description": "Preferred service time window stated by the caller."
+    },
+    "urgency": {
+      "type": "string",
+      "description": "Urgency stated by the caller; keep it separate from commercial value."
+    },
+    "opportunity_classification": {
+      "type": "string",
+      "enum": ["QUALIFIED", "FOLLOW_UP_REQUIRED", "SERVICE", "ESCALATED", "GENERAL"],
+      "description": "Use only the client-approved controlled classification when an explicit rule applies."
+    }
+  },
+  "required": [
+    "caller_name",
+    "caller_contact",
+    "vehicle",
+    "service",
+    "preferred_date",
+    "preferred_time_window"
+  ]
+}

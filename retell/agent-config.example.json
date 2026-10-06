@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "sanitized_baseline",
+  "agent": {
+    "name": "TAKAVEN Receptionist v0.1",
+    "purpose": "Fictional automotive receptionist for Mauritius and UAE demonstration use.",
+    "ai_disclosure": true,
+    "languages": {
+      "MU": ["en", "fr"],
+      "AE": ["en", "ar"]
+    },
+    "knowledge_sources": [
+      "../config/mauritius.example.json",
+      "../config/uae.example.json"
+    ],
+    "conversation_rules": [
+      "Answer only approved fictional facts.",
+      "Keep the latest caller correction and read back material details.",
+      "Ask for explicit confirmation before invoking the appointment action.",
+      "Use a truthful human callback fallback when escalation is required.",
+      "Never claim availability, booking, confirmation, reservation or staff acknowledgement."
+    ]
+  },
+  "tool": {
+    "name": "capture_appointment_request",
+    "description": "Send a caller-confirmed automotive appointment request to the team for confirmation. This is not a booking.",
+    "endpoint": "<N8N_WEBHOOK_URL>",
+    "http_method": "POST",
+    "max_retries": 0,
+    "headers": {
+      "<AUTH_HEADER_NAME>": "<AUTH_HEADER_VALUE>"
+    },
+    "payload_mode": "standard_retell_function_payload",
+    "schema_file": "tools/capture_appointment_request.schema.json",
+    "trusted_metadata": ["call.call_id"],
+    "safe_response": {
+      "success_status": "RECEIVED",
+      "success_message": "Your appointment request has been sent to the team for confirmation.",
+      "failure_status": "FAILED",
+      "failure_message": "Sorry, I could not send your appointment request right now. Please try again shortly."
+    }
+  },
+  "handoff": {
+    "current_mode": "truthful_callback_fallback_only",
+    "destination": "<OWNER_CONFIGURED_HANDOFF_DESTINATION>",
+    "staff_connection_claim": false
+  },
+  "runtime_identifiers": {
+    "retell_agent_ref": "<RETELL_AGENT_REF>",
+    "n8n_workflow_ref": "<N8N_WORKFLOW_REF>",
+    "sheet_ref": "<GOOGLE_SHEET_DOCUMENT_ID>"
+  }
+}
