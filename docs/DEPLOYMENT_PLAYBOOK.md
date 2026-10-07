@@ -1,4 +1,6 @@
-# Customer deployment playbook — future template
+# Customer deployment playbook — launch-preparation template
+
+> **Current-state note:** This playbook is being reconciled with the functional Retell → n8n → Google Sheets Receptionist baseline. Earlier paragraphs that mention Make/Data Store/Gate B are historical design notes, not the active runtime. Use [LAUNCH_PREPARATION.md](LAUNCH_PREPARATION.md) for the authoritative current checklist.
 
 Target: complete client configuration within approximately one business day after complete information and access are received, excluding carrier provisioning and external approvals. This is an ambition to validate, not a delivery guarantee.
 
@@ -6,7 +8,7 @@ Target: complete client configuration within approximately one business day afte
 
 Collect business identity, authorised approver, selected market/languages, reception mode, hours/timezone/holidays, services/prices/policies, approved FAQs, restrictions, qualification/VIP rules, escalation contacts and callback expectations. Record spelling/pronunciation preferences.
 
-Confirm that every authoritative system is customer-owned or explicitly customer-authorized: provider/voice account, carrier, Make/webhook, Sheet or CRM, mailbox/notification destination and retained data. Confirm supported routing, delegated access and approved data/disclosure/recording practices. The proposed first-demo route is Retell action → Make webhook → Google Sheet row plus staff email → receipt ID. Gate B must prove authenticity, replay, serialization and notification behaviour before this becomes an authoritative receipt. A calendar/CRM and booking authority are optional later integrations; they are not required for the first demo. Keep secrets and caller data outside this repository.
+Confirm that every authoritative system is customer-owned or explicitly customer-authorized: provider/voice account, carrier, n8n/webhook, Sheet or approved destination and retained data. Confirm supported routing, delegated access and approved data/disclosure/recording practices. The active first-demo route is Retell action → authenticated n8n webhook → Google Sheet row → synchronous RECEIVED/FAILED response. A calendar/CRM and booking authority are optional later integrations; they are not required for the first demo. Keep secrets and caller data outside this repository.
 
 ## First-demo data-flow map — Gate B design, not deployment proof
 

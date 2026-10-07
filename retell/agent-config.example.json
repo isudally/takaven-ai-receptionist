@@ -43,7 +43,10 @@
   "handoff": {
     "current_mode": "truthful_callback_fallback_only",
     "destination": "<OWNER_CONFIGURED_HANDOFF_DESTINATION>",
-    "staff_connection_claim": false
+    "staff_connection_claim": false,
+    "tool_name": "request_human_callback",
+    "tool_schema_file": "tools/request_human_callback.schema.json",
+    "safe_response": "CALLBACK_RECEIVED means the request was sent to the team; it does not mean a live transfer or guaranteed response time."
   },
   "runtime_identifiers": {
     "retell_agent_ref": "<RETELL_AGENT_REF>",

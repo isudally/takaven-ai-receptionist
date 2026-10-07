@@ -1,5 +1,7 @@
 # Action contracts v1
 
+> **Current-state note:** The active Receptionist contract is the dedicated `capture_appointment_request` action and the callback fallback in the sanitised n8n templates. The older Make/Data Store paragraph below is historical design provenance and is not the active runtime.
+
 These are semantic contracts for supported existing integrations, not deployed endpoints. Provider-specific argument schemas are added only for qualified survivors.
 
 ## Trusted envelope
@@ -20,7 +22,7 @@ Statuses: `read_ok`, `committed`, `pending`, `conflict`, `needs_information`, `u
 
 The first demo supports approved FAQ answers, service and vehicle-sales/test-drive qualification, lead creation, appointment-request capture, structured handoff and truthful human escalation. The scheduling mutation and customer-lookup contracts remain provider-neutral future contracts and are deferred until a customer-owned booking authority is selected and tested.
 
-The corrected shared first-demo outcome route is Retell action → HTTPS Make API-key-authenticated webhook → minimal Make Data Store receipt/idempotency ledger → Google Sheet row plus staff email → receipt ID. The ledger is not a customer database, CRM, booking database or general backend. It must use trusted Retell metadata, Process data in order, a unique `call_id + intent` key, canonical payload comparison, exact receipt retrieval, no-overwrite insertion and truthful `PROCESSING`/`UNKNOWN` reconciliation. Retell HMAC remains optional defense-in-depth because this route does not depend on Make reconstructing the raw signed body. Runtime authentication, sequencing, side-effect and reconciliation tests remain NOT_RUN; no deployment claim is made.
+The earlier Make/Data Store receipt route is retained as historical architecture evidence only. The active launch baseline is Retell action → n8n native header-authenticated webhook → Google Sheet row → synchronous RECEIVED/FAILED response. The n8n template and launch docs define the current authentication, callback and operational evidence requirements.
 
 | Action | Phase | Minimum arguments and checks | Authoritative result |
 |---|---|---|---|

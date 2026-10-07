@@ -37,12 +37,12 @@ Optional fields in the current Retell representation are `urgency` and `opportun
 1. Import the sanitized n8n blueprint into an owner-controlled n8n workspace.
 2. Set the webhook path and attach an owner-controlled Google Sheets credential outside Git.
 3. Create a fictional Sheet using the committed header schema.
-4. Configure the Retell function using the committed tool schema, owner-controlled endpoint placeholder and `max_retries = 0`.
+4. Configure the Retell function using the committed tool schema, owner-controlled n8n endpoint placeholder, native header credential and `max_retries = 0`.
 5. Keep the standard Retell envelope available so `call.call_id` can be mapped to `Call Reference`; do not use caller ID as identity authority.
 6. Send one fictional direct action test and confirm one Sheet row plus the synchronous response.
 7. Record results in the existing QA evidence format. Human Voice Acceptance remains a separate future gate.
 
-The actual n8n export was inspected in the owner workspace but is not committed raw because it contains environment-specific URLs, credential references and account configuration. The committed JSON is a sanitized TAKAVEN-owned blueprint of the observed four-node shape, with placeholders replacing those values.
+The actual n8n export was inspected in the owner workspace but is not committed raw because it contains environment-specific URLs, credential references and account configuration. The committed JSON is a sanitized TAKAVEN-owned blueprint of the observed four-node shape, with placeholders replacing those values. The launch-preparation callback template is separate and does not change this known-good appointment path.
 
 ## Safety and scope
 

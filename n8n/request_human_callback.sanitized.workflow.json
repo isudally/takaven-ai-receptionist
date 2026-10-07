@@ -1,0 +1,68 @@
+{
+  "name": "TAKAVEN Receptionist - Human Callback Request",
+  "active": false,
+  "settings": {"executionOrder": "v1", "timezone": "<BUSINESS_TIMEZONE>"},
+  "meta": {
+    "template_status": "sanitized_launch_template",
+    "live_values_removed": true,
+    "owner_must_configure": ["N8N_CALLBACK_WEBHOOK_PATH", "GOOGLE_SHEET_DOCUMENT_ID", "GOOGLE_SHEETS_CREDENTIAL", "N8N_HEADER_AUTH_CREDENTIAL"]
+  },
+  "nodes": [
+    {
+      "parameters": {"httpMethod": "POST", "path": "<N8N_CALLBACK_WEBHOOK_PATH>", "responseMode": "responseNode", "authentication": "headerAuth", "options": {}},
+      "id": "<CALLBACK_WEBHOOK_NODE_ID>",
+      "name": "Retell Function - Request Human Callback",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "<CALLBACK_WEBHOOK_ID>",
+      "credentials": {"httpHeaderAuth": {"id": "<N8N_HEADER_AUTH_CREDENTIAL_ID>", "name": "<N8N_HEADER_AUTH_CREDENTIAL_NAME>"}}
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {"__rl": true, "mode": "id", "value": "<GOOGLE_SHEET_DOCUMENT_ID>"},
+        "sheetName": {"__rl": true, "mode": "name", "value": "Handoffs"},
+        "columns": {"mappingMode": "defineBelow", "value": {
+          "Caller Name": "={{ $json.args?.caller_name || $json.caller_name || '' }}",
+          "Caller Contact": "={{ $json.args?.caller_contact || $json.caller_contact || '' }}",
+          "Reason": "={{ $json.args?.reason || $json.reason || '' }}",
+          "Preferred Callback Time": "={{ $json.args?.preferred_callback_time || $json.preferred_callback_time || '' }}",
+          "Call Reference": "={{ $json.call?.call_id || $json.call_id || $execution.id }}",
+          "Status": "CALLBACK_RECEIVED"
+        }, "matchingColumns": []},
+        "options": {"valueInputMode": "USER_ENTERED"}
+      },
+      "id": "<CALLBACK_SHEETS_NODE_ID>",
+      "name": "Save Human Callback Request",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [260, 0],
+      "onError": "continueErrorOutput",
+      "credentials": {"googleSheetsOAuth2Api": {"id": "<GOOGLE_SHEETS_CREDENTIAL_ID>", "name": "<GOOGLE_SHEETS_CREDENTIAL_NAME>"}}
+    },
+    {
+      "parameters": {"respondWith": "json", "responseBody": "={\"status\":\"CALLBACK_RECEIVED\",\"message\":\"Your request has been sent to the team for follow-up.\"}", "options": {}},
+      "id": "<CALLBACK_SUCCESS_RESPONSE_NODE_ID>",
+      "name": "Respond - Callback Received",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [520, -80]
+    },
+    {
+      "parameters": {"respondWith": "json", "responseBody": "={\"status\":\"FAILED\",\"message\":\"Sorry, I could not send the callback request right now.\"}", "options": {}},
+      "id": "<CALLBACK_FAILURE_RESPONSE_NODE_ID>",
+      "name": "Respond - Callback Failed",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [520, 80]
+    }
+  ],
+  "connections": {
+    "Retell Function - Request Human Callback": {"main": [[{"node": "Save Human Callback Request", "type": "main", "index": 0}]]},
+    "Save Human Callback Request": {"main": [
+      [{"node": "Respond - Callback Received", "type": "main", "index": 0}],
+      [{"node": "Respond - Callback Failed", "type": "main", "index": 0}]
+    ]}
+  }
+}

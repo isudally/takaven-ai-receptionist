@@ -1,6 +1,6 @@
 # Provider qualification register
 
-Checked 2026-10-05. **Gate B.1 architecture correction passes at design level; runtime remains NOT_RUN.** PASS means a specific documented capability, not tested performance. No account/call/audio/API execution or spend. EN/FR/AR telephone quality, customer carrier paths and safe booking have not been demonstrated. See [Gate B Retell mapping](RETELL_GATE_B_MAPPING.md).
+> **Historical qualification record — not the active runtime.** The live prototype evidence is now recorded in [STATUS.md](STATUS.md) and [RECEPTIONIST_BASELINE_V0_1.md](RECEPTIONIST_BASELINE_V0_1.md). Retell → n8n → Google Sheets is the current implementation; the earlier Make/Data Store route below remains provenance only. Production readiness is not established.
 
 ## Gate matrix
 

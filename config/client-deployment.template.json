@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "stage": "launch-preparation",
+  "client": {
+    "id": "<CUSTOMER_DEPLOYMENT_ID>",
+    "name": "<APPROVED_BUSINESS_NAME>",
+    "market": "<MU_OR_AE>",
+    "timezone": "<IANA_TIMEZONE>",
+    "languages": ["<PRIMARY_LANGUAGE>", "<SECONDARY_LANGUAGE>"]
+  },
+  "business": {
+    "locations": ["<APPROVED_LOCATION>"],
+    "opening_hours_ref": "<APPROVED_HOURS>",
+    "services_ref": "<APPROVED_SERVICES>",
+    "approved_prices_ref": "<APPROVED_PRICES_OR_HUMAN_QUOTE_RULE>",
+    "faqs_ref": "<APPROVED_FAQS>"
+  },
+  "call_handling": {
+    "receptionist_name": "<APPROVED_PERSONA_OR_NAME>",
+    "greeting_ref": "<APPROVED_GREETING>",
+    "contact_collection": ["caller_name", "caller_contact"],
+    "unsupported_request_behaviour": "truthful_callback_fallback",
+    "handoff_destination_ref": "<CUSTOMER_OWNED_DESTINATION>"
+  },
+  "actions": {
+    "appointment_request": {
+      "enabled": true,
+      "endpoint_ref": "<N8N_APPOINTMENT_ENDPOINT_REFERENCE>",
+      "permitted_result": "RECEIVED_OR_FAILED"
+    },
+    "human_callback": {
+      "enabled": true,
+      "endpoint_ref": "<N8N_CALLBACK_ENDPOINT_REFERENCE>",
+      "permitted_result": "CALLBACK_RECEIVED_OR_FAILED"
+    },
+    "booking": {"enabled": false}
+  },
+  "telephony": {
+    "provider_ref": "<CUSTOMER_OWNED_PROVIDER>",
+    "number_or_sip_ref": "<CUSTOMER_OWNED_NUMBER_OR_SIP>",
+    "fallback_route_ref": "<EXISTING_BUSINESS_ROUTE>"
+  },
+  "privacy": {
+    "recording": "<CUSTOMER_APPROVAL_REQUIRED>",
+    "retention_days": "<CUSTOMER_APPROVAL_REQUIRED>",
+    "deletion_owner": "<CUSTOMER_OWNER>"
+  }
+}

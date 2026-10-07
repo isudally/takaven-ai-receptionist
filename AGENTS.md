@@ -2,9 +2,9 @@
 
 ## Current authorisation
 
-The user authorised source-level review of related repositories and an independent rebuild using their useful patterns. That work produced documentation, draft client configuration, action/conversation contracts, acceptance design and offline lint. No live provider testing, provisioning or paid activity is authorised by that request.
+The current owner-authorised phase is Receptionist launch preparation. The working technical baseline is Retell → dedicated appointment action → n8n → Google Sheets → synchronous RECEIVED, using fictional data. Human voice evidence is completed, automated regression A–H passes, and final human release acceptance is deferred until first external-demo readiness. Preserve the launch-preparation scope in docs/EXECUTION_PLAN.md.
 
-The first Phase 0 desk pass is complete. The next gate is the owner-approved execution plan and offline provider mapping. Do not interpret this file as permission to execute later chargeable stages.
+Phase 0 and the earlier Gate B design work are historical evidence. Do not interpret them as the current runtime. Normal launch preparation is authorised, but paid usage, number purchase, customer data, production cutover and external launch still require the owner’s explicit approval.
 
 Read `README.md`, `docs/STATUS.md`, `docs/DECISIONS.md` and `docs/PHASE_0_BRIEF.md` before work. Inspect existing files before changing them. Preserve useful work.
 
@@ -20,7 +20,7 @@ Every handoff must end with evidence, status (`CLOSED`, `OPEN`, `UNKNOWN`, `BLOC
 
 - Buy, configure and integrate existing technology. No proprietary voice platform.
 - Do not build speech recognition, TTS, LLMs, telephony, CRM, calendars, analytics platforms, dashboards or a generic agent framework.
-- Offline configuration lint and provider-neutral mapping are authorised. No provider adapters, provider API calls, generated audio, number purchase, paid activity or live calls before the owner approves the execution plan and applicable test gate.
+- Offline configuration lint, launch templates, native credential configuration, callback workflow preparation and provider-native deployment documentation are authorised. No number purchase, paid activity, customer data, production cutover or external launch without the owner’s approval.
 - Read docs/ARCHITECTURE.md, docs/GITHUB_REUSE_REVIEW.md and spec/ACTION_CONTRACTS.md before changing the rebuilt pack. Do not import restricted source, prompts, workflows or migrations.
 - Do not buy numbers, activate paid plans, create paid resources or consume provider test credits without explicit authorisation.
 - No live customer data in research or benchmarking. Later demos use fictional information.

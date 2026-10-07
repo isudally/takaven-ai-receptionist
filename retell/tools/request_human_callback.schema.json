@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TAKAVEN request human callback",
+  "description": "Capture a callback request for the customer team. This does not transfer the caller or promise a response time.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "caller_name": {"type": "string", "description": "Caller-confirmed name; ask for spelling if unclear."},
+    "caller_contact": {"type": "string", "description": "Caller-confirmed phone number or other approved contact."},
+    "reason": {"type": "string", "description": "Short reason the caller needs a human follow-up."},
+    "preferred_callback_time": {"type": "string", "description": "Optional preferred callback window stated by the caller."}
+  },
+  "required": ["caller_name", "caller_contact", "reason"]
+}

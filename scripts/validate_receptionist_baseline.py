@@ -14,6 +14,7 @@ REQUIRED_FIELDS = [
     "preferred_date",
     "preferred_time_window",
 ]
+CALLBACK_REQUIRED_FIELDS = ["caller_name", "caller_contact", "reason"]
 SHEET_FIELDS = [
     "Caller Name",
     "Caller Contact",
@@ -45,11 +46,15 @@ def main():
     agent_path = ROOT / "retell/agent-config.example.json"
     schema_path = ROOT / "retell/tools/capture_appointment_request.schema.json"
     workflow_path = ROOT / "n8n/capture_appointment_request.sanitized.workflow.json"
+    callback_schema_path = ROOT / "retell/tools/request_human_callback.schema.json"
+    callback_workflow_path = ROOT / "n8n/request_human_callback.sanitized.workflow.json"
     sheet_path = ROOT / "n8n/sheet-schema.example.csv"
 
     agent = read_json(agent_path)
     schema = read_json(schema_path)
     workflow = read_json(workflow_path)
+    callback_schema = read_json(callback_schema_path)
+    callback_workflow = read_json(callback_workflow_path)
     schema_fields = schema["properties"]
     require(schema["type"] == "object", "tool schema must be an object")
     require(schema["required"] == REQUIRED_FIELDS, "tool required fields changed")
@@ -57,6 +62,9 @@ def main():
     require(agent["tool"]["name"] == "capture_appointment_request", "agent tool mismatch")
     require(agent["tool"]["schema_file"].endswith("capture_appointment_request.schema.json"), "agent schema reference mismatch")
     require(agent["tool"]["max_retries"] == 0, "automatic retries must remain disabled")
+    require(agent["handoff"]["tool_name"] == "request_human_callback", "handoff tool mismatch")
+    require(callback_schema["required"] == CALLBACK_REQUIRED_FIELDS, "callback required fields changed")
+    require(callback_schema["type"] == "object", "callback schema must be an object")
 
     nodes = workflow["nodes"]
     node_names = {node["name"] for node in nodes}
@@ -79,22 +87,34 @@ def main():
     require("booking" not in workflow_text.lower(), "booking action leaked into workflow")
     require("calendar" not in workflow_text.lower(), "calendar action leaked into workflow")
 
+    callback_nodes = callback_workflow["nodes"]
+    callback_names = {node["name"] for node in callback_nodes}
+    require(len(callback_nodes) == 4, "callback template must contain exactly four nodes")
+    require("Retell Function - Request Human Callback" in callback_names, "callback webhook missing")
+    callback_webhook = next(node for node in callback_nodes if node["name"] == "Retell Function - Request Human Callback")
+    require(callback_webhook["parameters"].get("authentication") == "headerAuth", "callback header auth missing")
+    callback_text = json.dumps(callback_workflow, ensure_ascii=False)
+    for field in CALLBACK_REQUIRED_FIELDS:
+        require(field in callback_text, f"callback workflow does not map {field}")
+    require("CALLBACK_RECEIVED" in callback_text, "callback success response missing")
+    require("booking" not in callback_text.lower(), "booking action leaked into callback workflow")
+
     with sheet_path.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.reader(stream))
     require(rows and rows[0] == SHEET_FIELDS, "Sheet schema mismatch")
     require(len(rows) == 2, "Sheet example must contain one fictional row")
     require(rows[1][-1] == "RECEIVED", "Sheet example status mismatch")
 
-    package_text = "\n".join(path.read_text(encoding="utf-8") for path in (agent_path, schema_path, workflow_path, sheet_path))
+    package_text = "\n".join(path.read_text(encoding="utf-8") for path in (agent_path, schema_path, workflow_path, sheet_path, callback_schema_path, callback_workflow_path))
     for marker in FORBIDDEN_LIVE_MARKERS:
         require(marker not in package_text, f"live secret or endpoint marker found: {marker}")
     urls = re.findall(r"https?://[^<>\s\"]+", package_text)
     require(
-        urls == ["https://json-schema.org/draft/2020-12/schema"],
+        set(urls) == {"https://json-schema.org/draft/2020-12/schema"},
         "non-placeholder URL found in baseline package",
     )
 
-    print(json.dumps({"status": "PASS", "nodes": len(nodes), "required_fields": REQUIRED_FIELDS, "live_values": False}))
+    print(json.dumps({"status": "PASS", "nodes": len(nodes), "callback_nodes": len(callback_nodes), "required_fields": REQUIRED_FIELDS, "live_values": False}))
 
 
 if __name__ == "__main__":

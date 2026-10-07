@@ -23,6 +23,7 @@
         "httpMethod": "POST",
         "path": "<N8N_WEBHOOK_PATH>",
         "responseMode": "responseNode",
+        "authentication": "headerAuth",
         "options": {}
       },
       "id": "<RETELL_WEBHOOK_NODE_ID>",
@@ -34,6 +35,12 @@
         0
       ],
       "webhookId": "<RETELL_WEBHOOK_ID>"
+      ,"credentials": {
+        "httpHeaderAuth": {
+          "id": "<N8N_HEADER_AUTH_CREDENTIAL_ID>",
+          "name": "<N8N_HEADER_AUTH_CREDENTIAL_NAME>"
+        }
+      }
     },
     {
       "parameters": {

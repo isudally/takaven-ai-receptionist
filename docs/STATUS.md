@@ -1,33 +1,50 @@
 # Project status
 
-Updated 2026-10-05.
+Updated 2026-10-06.
 
-## Completed
+## Current product
 
-- Created the GitHub repository and initial documentation; public visibility remains authorised for development/external review, with secrets, customer data and production configuration prohibited.
-- Reviewed 42 selected source/config/licence files across six related repositories; pinned source inventory and explicit adopt/skip decisions.
-- Rebuilt the independent implementation foundation: architecture, first-demo action contracts, conversation policy, two fictional draft automotive profiles, offline lint and staged acceptance catalogue.
-- Local lint validated both profiles; 23 negative configuration cases rejected; deterministic hashes verified.
-- Updated deployment/acceptance instructions to address committed outcomes, retries, concurrent changes, authentication, customer binding and truthful staff handover.
-- Established bounded orchestration, a dedicated Drift Guard and GitHub Reuse Scout; completed the first public-document provider pass with two execution agents and an independent reviewer.
-- Guard flagged overrestrictive route exclusions; main agent corrected them before merge. See PHASE_0_RECOMMENDATION.md and EXECUTION_RULES.md.
-- No third-party code copied or executed. No provider API activity, generated audio, live test calls, spend or deployment.
-- Gate B.1 architecture correction is documented in [RETELL_GATE_B_MAPPING.md](RETELL_GATE_B_MAPPING.md): the prior route blocker is resolved at design level using Make API-key ingress, ordered processing and a minimal Make Data Store receipt/idempotency ledger. Runtime behaviour remains NOT_RUN.
+TAKAVEN Receptionist only. This is Agent #1 of the future TAKAVEN shared base; Sales and Admin/Support runtime work is deferred. The implementation remains concrete and single-client rather than a generic platform.
 
-## Current state
+## Technical evidence
 
-Provider qualification: RETELL_PROVISIONAL_MAPPING_TARGET; Gate B: COMPLETE — design mapping only. Runtime: NOT_RUN. All full-stack performance and route evidence remain unresolved. Winner: NONE. Live agent: NONE. Production integrations: NONE. Active acceptance cases: NOT_RUN; booking-lifecycle cases: DEFERRED. Gate C/D: NOT_STARTED. Launch readiness: NOT_ASSESSED.
+- Technical baseline: **FUNCTIONAL**.
+- Active path: Retell dedicated `capture_appointment_request` → n8n → Google Sheets → synchronous `RECEIVED` response.
+- Retell action arguments were populated in the working test path.
+- Fictional French human evidence is **COMPLETED**; French quality was acceptable with polish, interruption passed, and the safe no-booking response passed.
+- Conversation polish was implemented after that call.
+- Automated regression scenarios A–H: **PASS**.
+- Human release acceptance: **DEFERRED until first external-demo readiness**. It is not required after every wording or configuration change.
+- Production readiness: **NOT ESTABLISHED**.
 
-Configuration pack: VALID_DRAFT only. Provider/agent IDs, voice references, identity policy, approved facts, retention, handoff destination and rollback remain unresolved for the first demo. Booking authority is explicitly deferred. Local validation does not approve deployment.
+## Launch-preparation state
 
-Repository: TEMPORARILY PUBLIC for the external review at https://github.com/isudally/takaven-ai-receptionist. Return it to private before commercial material or further implementation work is published. Original local bundle and browser history differ; preserve the remote history.
+The repository is now the source for a reproducible launch-preparation package, not merely a pre-runtime design study. The following are prepared as sanitised templates/runbooks and still require owner-controlled deployment evidence:
+
+- single-client configuration model;
+- native n8n header-auth template;
+- callback/handoff contract and workflow template;
+- operational event evidence requirements;
+- Mauritius/UAE telephony deployment route;
+- client onboarding, rollback and support procedures;
+- fictional Moka Motor Service Centre demo profile.
+
+## Not yet proven
+
+- production credential provisioning and unauthenticated-request rejection in the customer environment;
+- configured callback destination receipt;
+- customer-owned Mauritius or UAE number/SIP route;
+- production monitoring/alert delivery and retention policy;
+- release-candidate human acceptance before the first external demo.
+
+These are launch-preparation blockers, not reasons to redesign the working prototype.
+
+## Scope freeze
+
+The first Receptionist version may answer approved FAQs, collect service/caller context, capture appointment **requests**, support corrections, operate in Mauritius EN/FR, provide truthful callback/handoff fallback and return structured action results. It does not book, check availability, reschedule, cancel, perform customer lookup, require a CRM, or claim staff confirmation.
+
+Make/Data Store work is historical and is not the active baseline. Historical Gate 0A/B documents remain for provenance and are superseded where they describe the active runtime differently.
 
 ## Next action
 
-Gate 0A is complete. Gate B is complete at design level; runtime behaviour remains NOT_RUN. Gate C/D have not started. The next owner decision is whether to authorise the first bounded Retell web-call test using fictional data.
-
-## Evidence and handover
-
-[Source inventory](SOURCE_INVENTORY.json), [source review](GITHUB_REUSE_REVIEW.md), [offline validation](../reports/OFFLINE_VALIDATION.md), [QA design](../qa/README.md), [execution rules](EXECUTION_RULES.md), [desk recommendation](../reports/PHASE_0_RECOMMENDATION.md).
-
-User authorised deep source analysis and rebuilding from the good patterns. Work stayed within offline configuration/integration design. Record each later phase's instruction, configuration version, executed checks, actual costs, unresolved issues and exact next task. Never turn a specification or NOT_RUN case into an achieved result.
+Complete the launch-preparation package and verify it from a clean checkout; then run one controlled release-readiness review before any external demo.

@@ -3,7 +3,7 @@
   "stage": "draft",
   "client": {
     "id": "demo-auto-mu",
-    "name": "Fictional Auto MU",
+    "name": "Moka Motor Service Centre",
     "market": "MU",
     "timezone": "Indian/Mauritius",
     "currency": "MUR"
@@ -22,7 +22,7 @@
   },
   "facts": {
     "approved": false,
-    "address": "Fictional Auto MU, Moka, Mauritius",
+    "address": "Moka Motor Service Centre, Moka, Mauritius (fictional demo)",
     "faqs": [
       {
         "id": "opening_hours",
@@ -132,7 +132,7 @@
   "operations": {
     "mode": "primary",
     "customer_binding": "trusted_destination_and_agent",
-    "request_destination_ref": "make:webhook:staff-email-and-sheet",
+    "request_destination_ref": "n8n:webhook:appointment-request",
     "handoff": {
       "destination_ref": null,
       "hours": "business",

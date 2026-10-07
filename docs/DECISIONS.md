@@ -43,8 +43,8 @@ Names such as `GPT-Live-1`, `Gemini 3.8 Live`, `ElevenAgents` and `Reception.ai`
 - Exact available product/model/plan for each candidate; no silent substitutions.
 - Complete supported telephone route for each target market and customer-number setup.
 - Accounts, trial access, reviewer availability, spend cap and execution start date.
-- Gate 0A alignment is complete; Gate B.1 architecture correction is complete at design level. Runtime testing and Gate C/D remain unstarted.
-- The corrected Retell-to-Make receipt path, data handling, reviewer availability and any live-test ceiling remain later unknowns/approvals.
+- The earlier Gate 0A/B design sequence is historical. Current launch-preparation unknowns are authenticated n8n rejection, callback destination receipt, customer-owned telephony routing, privacy/recording/retention approval, rollback evidence and final release acceptance.
+- Retell → n8n → Google Sheets is the active runtime; the earlier Retell-to-Make receipt path is preserved only as historical provenance.
 - Final benchmark count, tied to qualified survivors and available access.
 - Launch prices, support boundaries and optional care scope.
 - Data handling, recording/AI disclosure and contractual requirements for the specific deployment.
@@ -52,3 +52,12 @@ Names such as `GPT-Live-1`, `Gemini 3.8 Live`, `ElevenAgents` and `Reception.ai`
 The owner must approve the execution plan in `docs/EXECUTION_PLAN.md` before any provider account, telephone route, paid test or live call is activated.
 
 Record future changes here with date, reason, evidence and user decision where required. The historical attachment never overrides this log or newer user instructions.
+
+## Current launch-preparation decisions — 2026-10-06
+
+- The Receptionist prototype is **FUNCTIONAL**: Retell dedicated `capture_appointment_request` → n8n → Google Sheets → synchronous `RECEIVED`.
+- Human French voice evidence is **COMPLETED** and conversation polish is implemented. Automated regression A–H is **PASS**. Final human release acceptance is deferred until the first external-demo candidate is frozen.
+- Earlier Make/Data Store/Gate B material is historical and superseded as the active runtime description; it remains for provenance and is not reopened.
+- Launch preparation adds only a single-client configuration model, native n8n header authentication, truthful callback fallback, minimal operational evidence, Mauritius/UAE telephony runbooks, onboarding and rollback/support procedures.
+- Booking, availability, reschedule/cancel, customer lookup, CRM, dashboard, generic platform, Sales/Admin runtime and new provider work remain out of scope.
+- Open launch evidence: unauthenticated rejection, callback destination receipt, customer-owned telephony route, privacy/recording/retention approval, rollback evidence and final release acceptance.
