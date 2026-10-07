@@ -34,6 +34,8 @@ The [launch-preparation plan](docs/EXECUTION_PLAN.md) records the remaining work
 
 Launch preparation is consolidated in [docs/LAUNCH_PREPARATION.md](docs/LAUNCH_PREPARATION.md). It is intentionally single-client and customer-owned: configuration, native credential stores, callback destination, telephony route, operational evidence and rollback are prepared per deployment.
 
+The frozen release candidate is packaged for demonstration in [docs/COMMERCIAL_DEMO_PACKAGE.md](docs/COMMERCIAL_DEMO_PACKAGE.md), with the [customer intake questionnaire](docs/CLIENT_ONBOARDING.md) and [demo reset checklist](docs/DEMO_RESET_CHECKLIST.md). The demo uses Moka Motor Service Centre and fictional data only.
+
 ## Documentation
 
 | Document | Purpose |
@@ -49,6 +51,9 @@ Launch preparation is consolidated in [docs/LAUNCH_PREPARATION.md](docs/LAUNCH_P
 | [Roadmap](docs/ROADMAP.md) | Execution milestones |
 | [Validation report](reports/OFFLINE_VALIDATION.md) | Checks actually run and limitations |
 | [Status](docs/STATUS.md) / [Manual actions](MANUAL_ACTIONS.md) | Handover and dependencies |
+| [Commercial demo package](docs/COMMERCIAL_DEMO_PACKAGE.md) | Demo script, capabilities, handover and pilot path |
+| [Customer intake questionnaire](docs/CLIENT_ONBOARDING.md) | Minimum information required for one deployment |
+| [Demo reset checklist](docs/DEMO_RESET_CHECKLIST.md) | Internal pre/post-demo controls |
 | [AGENTS.md](AGENTS.md) | Agent operating boundaries |
 | [Original blueprint](docs/reference/ORIGINAL_BLUEPRINT.txt) | Historical reference |
 

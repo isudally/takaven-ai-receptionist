@@ -1,34 +1,46 @@
-# TAKAVEN Receptionist client onboarding
+# TAKAVEN Receptionist customer intake questionnaire
 
-Keep onboarding short and concrete. One customer gets one approved configuration and one owner-controlled deployment.
+Please answer only what is relevant to the first Receptionist deployment. TAKAVEN uses this information to configure one customer-owned deployment.
 
-## Client provides
+## Business
 
-- business name, locations, timezone and opening hours;
-- services, approved prices and human-quote rules;
-- approved FAQs and supported languages;
-- receptionist name/persona and preferred greeting;
-- escalation contact and callback destination;
-- customer-owned Retell, n8n, Google and telephony accounts;
-- number/SIP/carrier details and existing fallback route;
-- recording, consent, retention and deletion choices;
-- approved fictional/demo or production data boundary.
+- Business name:
+- Locations and service areas:
+- Timezone:
+- Opening hours, closures and holidays:
+- Services offered:
+- Prices, approved price ranges or quote rules:
+- Approved FAQs and answers:
 
-## TAKAVEN configures
+## Conversation
 
-- client configuration and approved knowledge;
-- Retell agent, voice/language settings and dedicated action contracts;
-- authenticated n8n appointment and callback workflows;
-- customer-owned Sheet/destination connections;
-- telephony route and fallback where approved;
-- automated regression checks and evidence record;
-- rollback instructions and handover notes.
+- Preferred languages:
+- Receptionist name, identity and tone:
+- Preferred greeting:
+- Information the receptionist should collect:
+- Topics or requests it must not handle:
 
-## Customer approves
+## Callback and fallback
 
-- business facts and FAQ wording;
-- contact collection and no-booking wording;
-- callback/handoff destination;
-- recording/privacy/retention choices;
-- telephony caller-ID and fallback;
-- final release demo and launch decision.
+- Staff callback/handoff destination:
+- Destination availability or preferred callback hours:
+- Existing fallback phone number or process:
+- What should the receptionist say when a request needs a person?
+
+## Accounts and telephony
+
+- Customer owner for Retell, n8n, Google/records and telephony accounts:
+- Phone number, SIP or carrier details:
+- Caller-ID preference:
+- Existing routing and fallback arrangement:
+- Browser/web-call demo or customer-owned telephony for the first pilot:
+
+## Privacy and approval
+
+- Recording preference:
+- Retention period:
+- Deletion owner:
+- Consent or privacy wording:
+- Demo/test data boundary:
+- Customer approver for facts, wording and launch:
+- Customer approver signature/date:

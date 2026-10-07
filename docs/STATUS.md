@@ -50,4 +50,4 @@ Make/Data Store work is historical and is not the active baseline. Historical Ga
 
 ## Next action
 
-Complete one non-destructive rollback/readiness review, then request the single human release-acceptance call only when the external-demo candidate is frozen.
+Freeze the commercial demo package and request the single human release-acceptance call only when an actual external demo is scheduled.
