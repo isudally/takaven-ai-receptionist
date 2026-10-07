@@ -14,7 +14,7 @@ For each action, retain only what the approved customer policy permits:
 - Sheet/destination receipt evidence;
 - safe caller-facing status (`RECEIVED` or `FAILED`).
 
-Do not log API keys, header values, full secrets or unnecessary caller data. Recordings are off by default in the templates. Retention and deletion are customer-approved deployment choices.
+Do not log API keys, header values, full secrets or unnecessary caller data. Recordings are off by default in the templates. The fictional demo release uses zero-day retention; a customer deployment must set retention and deletion ownership explicitly.
 
 ## Failure handling
 

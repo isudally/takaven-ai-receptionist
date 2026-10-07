@@ -1,6 +1,6 @@
 # Project status
 
-Updated 2026-10-06.
+Updated 2026-10-07.
 
 ## Current product
 
@@ -14,16 +14,20 @@ TAKAVEN Receptionist only. This is Agent #1 of the future TAKAVEN shared base; S
 - Fictional French human evidence is **COMPLETED**; French quality was acceptable with polish, interruption passed, and the safe no-booking response passed.
 - Conversation polish was implemented after that call.
 - Automated regression scenarios A–H: **PASS**.
+- Authenticated appointment action: **PASS** in the owner-controlled demo environment; a real n8n execution appended a fictional row and returned `RECEIVED`.
+- Appointment request without the required header: **PASS**; rejected with HTTP 403 and no matching Sheet record.
+- Authenticated callback action: **PASS**; a real n8n execution appended a fictional `Handoffs` row and returned `CALLBACK_RECEIVED`.
+- Callback request without the required header: **PASS**; rejected with HTTP 403.
 - Human release acceptance: **DEFERRED until first external-demo readiness**. It is not required after every wording or configuration change.
 - Production readiness: **NOT ESTABLISHED**.
 
 ## Launch-preparation state
 
-The repository is now the source for a reproducible launch-preparation package, not merely a pre-runtime design study. The following are prepared as sanitised templates/runbooks and still require owner-controlled deployment evidence:
+The repository is now the source for a reproducible launch-preparation package, not merely a pre-runtime design study. The following are prepared as sanitised templates/runbooks:
 
 - single-client configuration model;
-- native n8n header-auth template;
-- callback/handoff contract and workflow template;
+- native n8n header-auth template, proven in the fictional demo;
+- callback/handoff contract and workflow, proven in the fictional demo;
 - operational event evidence requirements;
 - Mauritius/UAE telephony deployment route;
 - client onboarding, rollback and support procedures;
@@ -31,10 +35,9 @@ The repository is now the source for a reproducible launch-preparation package, 
 
 ## Not yet proven
 
-- production credential provisioning and unauthenticated-request rejection in the customer environment;
-- configured callback destination receipt;
 - customer-owned Mauritius or UAE number/SIP route;
 - production monitoring/alert delivery and retention policy;
+- real Retell call-ID correlation for the release candidate;
 - release-candidate human acceptance before the first external demo.
 
 These are launch-preparation blockers, not reasons to redesign the working prototype.
@@ -47,4 +50,4 @@ Make/Data Store work is historical and is not the active baseline. Historical Ga
 
 ## Next action
 
-Complete the launch-preparation package and verify it from a clean checkout; then run one controlled release-readiness review before any external demo.
+Complete one non-destructive rollback/readiness review, then request the single human release-acceptance call only when the external-demo candidate is frozen.

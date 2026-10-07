@@ -49,7 +49,7 @@ SHAPE = {
     },
     "privacy": {
         "recording_enabled": "boolean", "messaging_requires_consent": "boolean",
-        "retention_days": ("integer", "null")
+        "retention_days": ("integer", "null"), "deletion_owner": "string"
     }
 }
 POLICIES = {
@@ -99,8 +99,8 @@ def check_shape(value, shape, path="config"):
 
 def lint(config):
     check_shape(config, SHAPE)
-    require(config["schema_version"] == 1 and config["stage"] == "draft",
-            "Only v1 draft configuration is supported; this tool cannot approve deployment")
+    require(config["schema_version"] == 1 and config["stage"] in ("draft", "demo-release-candidate"),
+            "Only v1 draft or demo-release-candidate configuration is supported; this tool cannot approve deployment")
     c = config["client"]
     require(bool(re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", c["id"])), "Invalid client ID")
     require(c["market"] in MARKETS, "Market must be MU or AE")
@@ -177,7 +177,7 @@ def lint(config):
     privacy = config["privacy"]
     require(not privacy["recording_enabled"], "Draft pack does not authorise recordings")
     require(privacy["messaging_requires_consent"], "Messaging consent is required")
-    require(privacy["retention_days"] is None or 1 <= privacy["retention_days"] <= 365,
+    require(privacy["retention_days"] is None or 0 <= privacy["retention_days"] <= 365,
             "Invalid retention; value requires client approval before deployment")
     prerequisites = []
     for section, fields in {

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "stage": "draft",
+  "stage": "demo-release-candidate",
   "client": {
     "id": "demo-auto-ae",
     "name": "Fictional Auto AE",
@@ -143,6 +143,7 @@
   "privacy": {
     "recording_enabled": false,
     "messaging_requires_consent": true,
-    "retention_days": null
+    "retention_days": 0,
+    "deletion_owner": "TAKAVEN demo owner"
   }
 }
